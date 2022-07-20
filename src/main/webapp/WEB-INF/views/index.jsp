@@ -10,8 +10,6 @@
         <script src="/assets/js/common/util.js"></script>
 </head>
 <body>
-    <main>
-
-    </main>
+    <h1>인덱스</h1>
 </body>
 </html>
