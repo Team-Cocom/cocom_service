@@ -1,5 +1,6 @@
 package com.greenart.cocom_service.api;
 
+<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -14,4 +15,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class MainAPIController {
 
+=======
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class MainAPIController {
+    
+>>>>>>> doodo_work
 }

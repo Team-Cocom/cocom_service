@@ -8,11 +8,15 @@
         <title>Document</title>
         <link rel="stylesheet" href="/assets/css/reset.css">
         <script src="/assets/js/common/util.js"></script>
+<<<<<<< HEAD
         <script src="/assets/js/index.js"></script>
+=======
+>>>>>>> doodo_work
         <link rel="stylesheet" href="/assets/css/index.css">
 </head>
 <body>
     <main>
+<<<<<<< HEAD
         <div class="recommend_list_wrap">
             <section class="recommend_list_area">
                 <div class="recommend_list_item">
@@ -84,6 +88,9 @@
                     </a>
                 </c:forEach>
         </section>
+=======
+        
+>>>>>>> doodo_work
     </main>
 </body>
 </html>
