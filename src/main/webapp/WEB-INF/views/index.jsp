@@ -8,10 +8,11 @@
         <title>Document</title>
         <link rel="stylesheet" href="/assets/css/reset.css">
         <script src="/assets/js/common/util.js"></script>
+        <link rel="stylesheet" href="/assets/css/index.css">
 </head>
 <body>
     <main>
-
+        
     </main>
 </body>
 </html>
