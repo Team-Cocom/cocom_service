@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.greenart.cocom_service.mapper.MainMapper">
+    <select id="selectAllFromAlbumIndex" resultType="com.greenart.cocom_service.data.adminRecommendIndex">
+        select a.ard_seq,a.ard_title ,b.mu_name ,b.mu_img_file ,c.ai_name  
+        from admin_recommend a inner join music_info b 
+        on a.ard_mu_seq = b.mu_seq inner join artist_info c 
+        on c.ai_seq = b.mu_ai_seq
+        group by ard_title
+        limit 1 offset #{offset}
+    </select>
+    <select id="selectAllFromMusicIndex" resultType="com.greenart.cocom_service.data.adminMusicIndex">
+        select a.mu_seq,a.mu_name ,a.mu_img_file,a.mu_age,b.ard_title,c.ai_name  from music_info a inner join admin_recommend b
+        inner join artist_info c on a.mu_ai_seq = c.ai_seq 
+        where  a.mu_seq  = b.ard_mu_seq and b.ard_title = #{title}
+        group by mu_name limit 8
+    </select>
+    <select id="selectAllNewMusic" resultType="com.greenart.cocom_service.data.MusicSummary">
+        select a.mu_seq ,a.mu_name ,a.mu_img_file ,b.ai_name 
+        from music_info a inner join artist_info b on a.mu_ai_seq = b.ai_seq
+        order by mu_seq  desc
+        limit 10
+    </select>
+    <select id="selectAllMusicFromGenre" resultType="com.greenart.cocom_service.data.MusicAndGenreSummary">
+        select a.mu_seq ,a.mu_name ,a.mu_img_file,b.gr_seq  ,b.gr_name  from music_info a inner join genre_info b on
+        a.mu_gr_seq = b.gr_seq
+        group by b.gr_name 
+        order by mu_seq desc
+        limit 5
+    </select>
+    <select id="selectAllAlbum" resultType="com.greenart.cocom_service.data.AlbumSummary">
+        select a.ab_seq ,a.ab_name ,a.ab_img_file ,b.ai_name  from
+        album_info a inner join artist_info b on a.ab_ai_seq = b.ai_seq 
+        order by ab_seq desc
+        limit 10
+    </select>
+</mapper>

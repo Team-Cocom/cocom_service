@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.structure.min.css" integrity="sha512-oM24YOsgj1yCDHwW895ZtK7zoDQgscnwkCLXcPUNsTRwoW1T1nDIuwkZq/O6oLYjpuz4DfEDr02Pguu68r4/3w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.theme.min.css" integrity="sha512-9h7XRlUeUwcHUf9bNiWSTO9ovOWFELxTlViP801e5BbwNJ5ir9ua6L20tEroWZdm+HFBAWBLx2qH4l4QHHlRyg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="/assets/js/common/util.js"></script>
+    <script src="/assets/js/header.js"></script>
     <title>Document</title>
 <!DOCTYPE html>
 <html>
@@ -29,7 +30,38 @@
 </head>
 <body>
     <header>
-
+        <div class="header_area">
+            <div class="header_left_area">
+        <a href="/">
+            <img src="/assets/images/cocom_logo.png">
+        </a>
+        <a href="#">내보관함</a>
+        <a href="#">이용권</a>
+        <div class="search_box">
+            <form action="#" method="get">
+                <input type="text" name="keyword" value="${keyword}" placeholder="     검색어를 입력하세요.">
+                <button type="submit">검색</button>
+            </form>
+        </div>
+    </div>
+    <div class="header_right_area">
+        <a href="#">공지사항</a>
+        <a href="#">로그인</a>
+        <a href="#">회원가입</a>
+    </div>
+    </div>
+    <div class="music_play_area">
+        <div class="music_play_list">
+            <audio controls></audio>
+            <button class="music_inventory_button">
+                <i class="fas fa-bars" >
+                </i>
+            </button>
+    </div>
+    </div>
+    <div class="music_inventory_area">
+        
+    </div>
     </header>
 </body>
 </html>

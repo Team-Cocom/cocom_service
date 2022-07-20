@@ -1,0 +1,59 @@
+.header_area{
+    width: 1780px; margin: 0; text-align: center; margin-top: 50px;
+}
+
+
+.header_left_area {
+    text-align: left; width: 790px; position: inherit; display: inline-block;
+}
+.header_right_area {
+    text-align: right; width: 399px; position: inherit; display: inline-block;
+}
+
+
+.header_left_area a, .header_right_area a {
+    margin-right: 30px; text-decoration: none; color: #000;
+}
+.header_right_area a {
+    color: #999;
+}
+
+
+.search_box {margin-top: 10px; display: inline-block; width: 350px;}
+.search_box input {
+    font-family: "Noto Sans KR";
+    border: 1px solid #999;
+    border-radius: 30px;
+    height:30px; width: 280px; outline:none;
+}
+.search_box button {
+    border: 1px solid #999;
+    font-family: "Noto Sans KR";
+    color: #333;
+    background-color: #fff;
+    width:50px; height:30px; border-radius: 3px;
+    position: relative; top: 2px; margin-left: 5px;
+    cursor:pointer;
+}
+.search_box button:hover {
+    color: #fff; background-color: #333;
+    border-color: #333;
+}
+
+.music_play_area{
+    width: 100vw; bottom: 0; position: fixed; height: 100px; z-index: 9999; background-color: #000
+}
+.music_play_list {position: inherit; text-align: center;}
+.music_play_list > button {
+    bottom: 40px; right: 300px; display: inline-block; position: inherit; background-color: #333; cursor: pointer;
+}
+.music_play_list i {font-size: 40px;  background-size: 100%;}
+.music_play_list > audio {
+    display: inline-block; width: 500px; font-size: 30px; text-align: center; margin-left: 700px; margin-top: 20px;
+    background-color: #000
+}
+
+.music_inventory_area.on{
+    position: fixed; top: 0; right: 0; overflow: hidden; width: 575px; padding: 0 40px; bottom: 100px; background-color: #262626; z-index: 200;
+    
+}
