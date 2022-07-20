@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.greenart.cocom_service.mapper.MemberMapper">
+    <select id="loginUser" resultType="com.greenart.cocom_service.data.MemberInfoVO">
+        SELECT mi_seq, mi_id, mi_pwd, mi_name, mi_birth, mi_addr, mi_role, mi_profile_img, mi_nickname, mi_ip, mi_reg_dt, mi_mod_dt, mi_status, mi_use, mi_alim, mi_ps_seq
+        FROM member_info
+        where
+            mi_id = #{id} and mi_pwd = #{pwd}
+    </select>
+    <insert id="joinMember">
+        INSERT INTO member_info
+            (mi_id, mi_pwd, mi_name, mi_birth, mi_addr, mi_role, mi_profile_img, mi_nickname, mi_gen, mi_status, mi_use,mi_alim)
+        VALUES
+            (#{mi_id}, #{mi_pwd}, #{mi_name}, #{mi_birth}, #{mi_addr}, #{mi_role}, #{mi_profile_img}, #{mi_nickname}, #{mi_gen}, #{mi_status}, #{mi_use},#{mi_alim})
+    </insert>
+    <select id="isDuplicatedId" resultType="java.lang.Integer">
+        select count(*) from member_info where mi_id = #{id}
+    </select>
+    <select id="isDuplicatedPhone" resultType="java.lang.Integer">
+        select count(*) from member_info where mi_phone = #{phone}
+    </select>
+    <select id="IsDuplicateCheck" resultType="java.lang.Integer">
+        select count(*) from member_info where mi_id = #{id}
+    </select>
+
+</mapper>
+
