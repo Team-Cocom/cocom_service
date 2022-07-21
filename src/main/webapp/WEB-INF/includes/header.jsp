@@ -46,11 +46,17 @@
     </div>
     <div class="header_right_area">
         <a href="#">공지사항</a>
-        <a href="#">로그인</a>
-        <a href="#">회원가입</a>
+        <c:if test="${user != null}">
+            <a href="/logout">로그아웃</a>
+            <a href="/myinfo/modify"></a>
+        </c:if>
+        <c:if test="${user == null}">
+            <a href="/login">로그인</a>
+        </c:if>
+        <a href="/join">회원가입</a>
     </div>
     </div>
-    <div class="music_play_area">
+    <div class="music_play_area" hidden>
         <div class="music_play_list">
             <audio controls></audio>
             <button class="music_inventory_button">

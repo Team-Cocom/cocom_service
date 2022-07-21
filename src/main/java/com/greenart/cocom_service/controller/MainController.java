@@ -1,10 +1,15 @@
 package com.greenart.cocom_service.controller;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
+=======
+>>>>>>> d520f31a98355d50a160909985c4d6d0fe14fa1c
 import java.util.List;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.Nullable;
@@ -40,7 +45,21 @@ public class MainController {
         model.addAttribute("music_list", music_list);
         return "/index";
     }
+<<<<<<< HEAD
 =======
  
 >>>>>>> doodo_work
+=======
+
+    @GetMapping("/login")
+    public String getLogin(){
+        return "/login";
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session){
+        session.invalidate();
+        return "redirect:/";
+    }
+>>>>>>> d520f31a98355d50a160909985c4d6d0fe14fa1c
 }
