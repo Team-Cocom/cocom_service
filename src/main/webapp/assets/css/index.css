@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 main{
     min-width: 1280px;
 }
@@ -87,7 +87,6 @@ background-repeat: no-repeat; border-radius: 10px; margin-top: 30px;
 .music_summary_item .album_name{
     font-size: 22px; color: #000;
 }
-<<<<<<< HEAD
 
 .main_banner {
     width: 955px; margin: 0 auto; height: 393px;
@@ -106,60 +105,4 @@ background-repeat: no-repeat; border-radius: 10px; margin-top: 30px;
 .recommend_list_wrap.third{background-color: #674d45;}
 .recommend_list_wrap.fourth{background-color: #61484b;}
 .recommend_list_wrap.fifth{background-color: #4c4863;}
-=======
-=======
-.music_list_wrap > a {display: inline-block; margin: 10px; 
-    vertical-align: top; color: #333; text-decoration: none;
-}
-.music_img {font-size: 0;}
 
-.music_img {position: relative;}
-
-.music_list_item {
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow:0 0 10px #00000022;
-}
-.music_list_item .music_title {
-    font-size: 14px; color: #fff;
-    width: 120px; height: 30px; background-color: #333;
-    border-radius: 3px; text-align: center; line-height: 30px;
-    font-weight: 100; margin:0 auto;
-}
-.music_list_item .artis_info {
-    text-align: center; margin-top: 10px; font-size: 14px;
-    width: 100%; overflow: hidden;
-    white-space: nowrap; text-overflow:ellipsis;
-}
-.music_list_item .audio {
-    text-align: center; margin-top: 10px; font-size: 14px;
-    width: 100%;
-}
-
-
-.recommend_list_wrap{text-align: center; width: 1280px; vertical-align: middle; margin-left: 450px;}
-.recommend_list_section{width: 1200px; margin-top: 35px;}
-.recommend_list_section > h1{text-align: left; font-size: 24px; font-weight: 700;}
-.recommend_list_area {text-align-last: left; padding-right: 50px; width: 1000px;}
-
-
-.recommend_item {
-display: inline-block; width: 150px; vertical-align: top; font-size: 14px; text-decoration: none;
-color: #333; margin: 10px; margin-right: 35px;
-}
-.recommend_item_txt {background-color: #fff; color: #333; padding:2px 0px 7px 0px; text-align: center;}
-.recommend_item .recommend_title {
-line-height: 1.3; padding:5px 0; text-align: center; width: 100%;
-overflow: hidden; white-space: nowrap; text-overflow: ellipsis; box-sizing: border-box;
-padding:5px;
-}
-.recommend_item .recommend_name {
-font-size: 12px; text-align: center; padding:3px;
-}
-
-.recommend_item .recommend_img {
-width: 150px; height: 152px; background-size: auto 100%; background-position: center;
-background-repeat: no-repeat; position: relative; margin-right: 30px;
-}
->>>>>>> doodo_work
->>>>>>> develop

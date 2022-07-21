@@ -48,9 +48,6 @@
     </div>
     <div class="header_right_area">
         <a href="#">공지사항</a>
-<<<<<<< HEAD
-        <a href="#">로그인</a>
-=======
         <c:if test="${user != null}">
             <a href="/logout">로그아웃</a>
             <a href="/myinfo/modify"></a>
@@ -58,7 +55,6 @@
         <c:if test="${user == null}">
             <a href="/login">로그인</a>
         </c:if>
->>>>>>> develop
         <a href="/join">회원가입</a>
     </div>
     </div>

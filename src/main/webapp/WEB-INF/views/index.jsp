@@ -3,7 +3,6 @@
 <%@include file="/WEB-INF/includes/header.jsp"%>
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
 
 <head>
     <meta charset="UTF-8">
@@ -12,23 +11,10 @@
     <script src="/assets/js/common/util.js"></script>
     <script src="/assets/js/index.js"></script>
     <link rel="stylesheet" href="/assets/css/index.css">
-=======
-    <head>
-        <meta charset="UTF-8">
-        <title>Document</title>
-        <link rel="stylesheet" href="/assets/css/reset.css">
-        <script src="/assets/js/common/util.js"></script>
-<<<<<<< HEAD
-        <script src="/assets/js/index.js"></script>
-=======
->>>>>>> doodo_work
-        <link rel="stylesheet" href="/assets/css/index.css">
->>>>>>> develop
 </head>
 
 <body>
     <main>
-<<<<<<< HEAD
         <div class="swiper main_banner">
             <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -59,26 +45,6 @@
                             </div>
                         </div>
                     </section>
-=======
-<<<<<<< HEAD
-        <div class="recommend_list_wrap">
-            <section class="recommend_list_area">
-                <div class="recommend_list_item">
-            <div class="recommend_img" style="background-image: url('/images/music_cover/${recommend_list.mu_img_file}');"></div>
-            <p class="recommend_title">${recommend_list.ard_title} <span class="music_count">총 1곡</span></p>
-        </div>
-        <div class="music_list_item">
-            <div class="music_list">
-                    <c:forEach items="${music_list}" var="item">
-                        <div class="music_detail_item">
-                        <div class="music_list_detail">
-                    <a href="/music/detail?music_no=${item.mu_seq}">
-                    <div class="music_img" style="background-image: url('/images/music_cover/${item.mu_img_file}');"></div>
-                    <span class="music_name">${item.mu_name}
-                        <span class="artis_name">${item.ai_name}</span>
-                    </span>
-                </a>
->>>>>>> develop
                 </div>
             </div>
             <div class="swiper-slide">
@@ -252,7 +218,6 @@
                 </a>
             </c:forEach>
         </section>
-<<<<<<< HEAD
     </main>
     <script>
         const swiper = new Swiper('.swiper', {
@@ -266,12 +231,6 @@
             }
         });
     </script>
-=======
-=======
-        
->>>>>>> doodo_work
-    </main>
->>>>>>> develop
 </body>
 
 </html>

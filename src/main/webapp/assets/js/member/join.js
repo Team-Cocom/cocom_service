@@ -98,10 +98,6 @@ $(function(){
 
         let agreeAlrim = 0;
         
-<<<<<<< HEAD
-        
-=======
->>>>>>> develop
         if($(".isAlrim").prop("checked")){
             agreeAlrim = 1;
         }
