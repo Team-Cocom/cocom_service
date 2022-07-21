@@ -23,5 +23,5 @@ public class MemberInfoVO {
     private Integer mi_alim;
     private Integer mi_ps_seq;
     private Integer mi_gen;
-
+    private String mi_phone;
 }

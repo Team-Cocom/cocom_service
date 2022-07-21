@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.greenart.cocom_service.mapper.BasicMapper">
+<select id="selectMusicDetail" resultType="com.greenart.cocom_service.data.MusicInfoVO">
+    select a.*,b.ai_name  from music_info a inner join artist_info b
+    on a.mu_ai_seq = b.ai_seq 
+    where a.mu_seq = #{seq}
+</select>
+</mapper>

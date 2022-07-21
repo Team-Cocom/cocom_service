@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+<<<<<<< HEAD
 import com.greenart.cocom_service.data.AlbumSummary;
 import com.greenart.cocom_service.data.MusicAndGenreSummary;
 import com.greenart.cocom_service.data.MusicSummary;
@@ -19,4 +20,11 @@ public interface MainMapper {
     public List<MusicAndGenreSummary> selectAllMusicFromGenre();
     public List<AlbumSummary> selectAllAlbum();
     
+=======
+import com.greenart.cocom_service.data.albumIndexPageVO;
+
+@Mapper
+public interface MainMapper {
+    public List<albumIndexPageVO> selectAllFromAlbumIndex();
+>>>>>>> doodo_work
 }
