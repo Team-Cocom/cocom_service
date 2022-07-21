@@ -12,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/assets/css/reset.css">
-    <%-- <link rel="stylesheet" href="/assets/css/header.css"> --%>
+    <link rel="stylesheet" href="/assets/css/header.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
     <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -46,11 +46,17 @@
     </div>
     <div class="header_right_area">
         <a href="#">공지사항</a>
-        <a href="#">로그인</a>
-        <a href="#">회원가입</a>
+        <c:if test="${user != null}">
+            <a href="/logout">로그아웃</a>
+            <a href="/myinfo/modify"></a>
+        </c:if>
+        <c:if test="${user == null}">
+            <a href="/login">로그인</a>
+        </c:if>
+        <a href="/join">회원가입</a>
     </div>
     </div>
-    <div class="music_play_area">
+    <div class="music_play_area" hidden>
         <div class="music_play_list">
             <audio controls></audio>
             <button class="music_inventory_button">

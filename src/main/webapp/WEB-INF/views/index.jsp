@@ -12,7 +12,6 @@
         <link rel="stylesheet" href="/assets/css/index.css">
 </head>
 <body>
-<<<<<<< HEAD
     <main>
         <div class="recommend_list_wrap">
             <section class="recommend_list_area">
@@ -86,8 +85,5 @@
                 </c:forEach>
         </section>
     </main>
-=======
-    <h1>인덱스</h1>
->>>>>>> yuna_work
 </body>
 </html>

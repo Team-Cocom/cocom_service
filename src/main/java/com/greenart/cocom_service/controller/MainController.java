@@ -1,9 +1,8 @@
 package com.greenart.cocom_service.controller;
 
-
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.Nullable;
@@ -30,5 +29,16 @@ public class MainController {
         model.addAttribute("recommend_list", recommend_list);
         model.addAttribute("music_list", music_list);
         return "/index";
+    }
+
+    @GetMapping("/login")
+    public String getLogin(){
+        return "/login";
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session){
+        session.invalidate();
+        return "redirect:/";
     }
 }
