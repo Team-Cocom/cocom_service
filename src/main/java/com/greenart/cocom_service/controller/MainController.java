@@ -1,6 +1,5 @@
 package com.greenart.cocom_service.controller;
 
-<<<<<<< HEAD
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -8,11 +7,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.Nullable;
-=======
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
->>>>>>> doodo_work
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,7 +23,6 @@ import com.greenart.cocom_service.mapper.MainMapper;
 
 @Controller
 public class MainController {
-<<<<<<< HEAD
     @Autowired MainMapper main_mapper;
     @GetMapping("/")
     public String getMain(Model model,@RequestParam @Nullable Integer seq){
@@ -40,7 +36,4 @@ public class MainController {
         model.addAttribute("music_list", music_list);
         return "/index";
     }
-=======
- 
->>>>>>> doodo_work
 }

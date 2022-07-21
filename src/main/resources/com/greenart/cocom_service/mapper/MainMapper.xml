@@ -2,7 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.greenart.cocom_service.mapper.MainMapper">
-<<<<<<< HEAD
     <select id="selectAllFromAlbumIndex" resultType="com.greenart.cocom_service.data.adminRecommendIndex">
         select a.ard_seq,a.ard_title ,b.mu_name ,b.mu_img_file ,c.ai_name  
         from admin_recommend a inner join music_info b 
@@ -35,13 +34,5 @@
         album_info a inner join artist_info b on a.ab_ai_seq = b.ai_seq 
         order by ab_seq desc
         limit 10
-=======
-    <select id="selectAllFromAlbumIndex" resultType="com.greenart.cocom_service.data.albumIndexPageVO">
-        select a.mu_seq ,a.mu_name ,a.mu_img_file ,b.ab_name ,b.ab_img_file ,
-        c.ai_name from music_info a 
-        inner join album_info b
-        on a.mu_ab_seq = b.ab_seq inner join artist_info c
-        on c.ai_seq = a.mu_ai_seq 
->>>>>>> doodo_work
     </select>
 </mapper>
