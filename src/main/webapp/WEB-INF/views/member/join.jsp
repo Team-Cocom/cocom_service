@@ -88,23 +88,27 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>프로필 이미지</td>
+                            <td></td>
                                 <form id="profile_img_form">
                                     <input type="file" name="file" id="profile_img"  hidden accept = "image/gif, image/jpeg, image/png">
                                 </form>
-                            <td class="profile_img_area" filename="${mi_profile_img}">
-                            </td>
+
                             <button id="profile_img_save" onclick="document.getElementById('profile_img').click()">프로필
                                 이미지 업로드</button>
                             <td>
-                                <input type="checkbox" value="1" class="isAlrim">
+                                <input type="checkbox" value="1" class="isAlrim" id="alrim">
                                 <label>알림수신</label>
                             </td>
                         </tr>
                     </tbody>
                 </table>
-                <button id="join">회원가입</button>
-                <button id="cancel">들어가기</button>
+                <div class="profile_explain">프로필 이미지</div>
+                <div class="profile_img_area" filename="${mi_profile_img}">
+                </div>
+                <div class="button_area">
+                    <button id="join">회원가입</button>
+                    <button id="cancel">들어가기</button>
+                </div>
             </div>
         </div>
     </main>

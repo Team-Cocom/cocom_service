@@ -20,15 +20,29 @@ import com.greenart.cocom_service.mapper.MainMapper;
 public class MainController {
     @Autowired MainMapper main_mapper;
     @GetMapping("/")
-    public String getMain(Model model,@RequestParam @Nullable Integer seq){
-        if(seq==null) seq =0;
-        adminRecommendIndex recommend_list = main_mapper.selectAllFromAlbumIndex(seq);
-        List<adminMusicIndex> music_list = main_mapper.selectAllFromMusicIndex(recommend_list.getArd_title());
+    public String getMain(Model model){
+        List<adminRecommendIndex> recommend_list = main_mapper.selectAllFromAlbumIndex();
+        List<adminMusicIndex> music_list_frist = main_mapper.selectAllFromMusicIndex(recommend_list.get(0).getArd_title());
+        List<adminMusicIndex> music_list_second = main_mapper.selectAllFromMusicIndex(recommend_list.get(1).getArd_title());
+        List<adminMusicIndex> music_list_third = main_mapper.selectAllFromMusicIndex(recommend_list.get(2).getArd_title());
+        List<adminMusicIndex> music_list_fourth = main_mapper.selectAllFromMusicIndex(recommend_list.get(3).getArd_title());
+        List<adminMusicIndex> music_list_fifth = main_mapper.selectAllFromMusicIndex(recommend_list.get(4).getArd_title());
+        
+
+
+
+        model.addAttribute("recommend_list", recommend_list);
+        model.addAttribute("Cnt", main_mapper.selectCountALLRecommendMusic());
+        model.addAttribute("music_list_frist", music_list_frist);
+        model.addAttribute("music_list_second", music_list_second);
+        model.addAttribute("music_list_third", music_list_third);
+        model.addAttribute("music_list_fourth", music_list_fourth);
+        model.addAttribute("music_list_fifth", music_list_fifth);
+
+
         model.addAttribute("list", main_mapper.selectAllNewMusic());
         model.addAttribute("music_genre_list", main_mapper.selectAllMusicFromGenre());
         model.addAttribute("album_list", main_mapper.selectAllAlbum());
-        model.addAttribute("recommend_list", recommend_list);
-        model.addAttribute("music_list", music_list);
         return "/index";
     }
 }

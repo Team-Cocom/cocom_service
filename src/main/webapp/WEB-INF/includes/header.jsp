@@ -12,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/assets/css/reset.css">
-    <%-- <link rel="stylesheet" href="/assets/css/header.css"> --%>
+    <link rel="stylesheet" href="/assets/css/header.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
     <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.theme.min.css" integrity="sha512-9h7XRlUeUwcHUf9bNiWSTO9ovOWFELxTlViP801e5BbwNJ5ir9ua6L20tEroWZdm+HFBAWBLx2qH4l4QHHlRyg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="/assets/js/common/util.js"></script>
     <script src="/assets/js/header.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <title>Document</title>
 <!DOCTYPE html>
 <html>
@@ -36,7 +38,7 @@
             <img src="/assets/images/cocom_logo.png">
         </a>
         <a href="#">내보관함</a>
-        <a href="#">이용권</a>
+        <a href="/pass">이용권</a>
         <div class="search_box">
             <form action="#" method="get">
                 <input type="text" name="keyword" value="${keyword}" placeholder="     검색어를 입력하세요.">
@@ -47,10 +49,10 @@
     <div class="header_right_area">
         <a href="#">공지사항</a>
         <a href="#">로그인</a>
-        <a href="#">회원가입</a>
+        <a href="/join">회원가입</a>
     </div>
     </div>
-    <div class="music_play_area">
+    <div class="music_play_area" hidden>
         <div class="music_play_list">
             <audio controls></audio>
             <button class="music_inventory_button">

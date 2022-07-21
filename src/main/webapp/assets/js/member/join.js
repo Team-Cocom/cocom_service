@@ -98,9 +98,11 @@ $(function(){
 
         let agreeAlrim = 0;
         
-        if($(".isAlrim").prop("cehcked")){
-            agreeAlrim = 1
+        
+        if($(".isAlrim").prop("checked")){
+            agreeAlrim = 1;
         }
+
 
         let data = {
         "mi_id":$("#mi_id").val(),
