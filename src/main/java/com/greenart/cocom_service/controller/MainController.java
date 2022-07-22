@@ -9,21 +9,19 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.lang.Nullable;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.greenart.cocom_service.data.adminMusicIndex;
 import com.greenart.cocom_service.data.adminRecommendIndex;
 import com.greenart.cocom_service.mapper.MainMapper;
-
-import com.greenart.cocom_service.mapper.MainMapper;
+import com.greenart.cocom_service.mapper.PlayListMapper;
 
 @Controller
 public class MainController {
+    @Autowired PlayListMapper play_list_mapper;
     @Autowired MainMapper main_mapper;
     @GetMapping("/")
     public String getMain(Model model){

@@ -1,0 +1,12 @@
+$(function(){
+    $(".mu_info").click(function(){
+        $.ajax({
+            url:"/api/palylist/add?seq="+$(this).attr("data-seq"),
+            type:"put",
+            success:function(r){
+                alert(r.message);
+                location.reload();
+            }
+        })
+    })
+})

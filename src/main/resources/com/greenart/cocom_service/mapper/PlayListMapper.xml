@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.greenart.cocom_service.mapper.PlayListMapper">
+    <insert id="insertPlayListInfo">
+    INSERT INTO playlist_info
+    (pls_mi_seq, pls_mu_seq)
+    VALUES
+    (#{pls_mi_seq}, #{pls_mu_seq})
+    </insert>
+    <select id="selectPlayListToMember" resultType="com.greenart.cocom_service.data.PlayListToMemberVO">
+        select a.mu_seq ,a.mu_name ,a.mu_img_file ,a.mu_music_file ,b.pls_seq ,b.pls_mi_seq,
+        b.pls_mu_seq ,c.mi_seq ,c.mi_ps_seq ,d.ai_name 
+        from music_info a inner join playlist_info b
+        on a.mu_seq = b.pls_mu_seq inner join member_info c 
+        on b.pls_mi_seq = #{seq} inner join artist_info d
+        on a.mu_ai_seq =d.ai_seq 
+        group by mu_name 
+        order by b.pls_seq asc
+    </select>
+</mapper>
