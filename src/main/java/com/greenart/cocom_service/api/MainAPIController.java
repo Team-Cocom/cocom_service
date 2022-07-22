@@ -4,9 +4,12 @@ package com.greenart.cocom_service.api;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> e50ce01f8c9ba1202199c70ec1f992690af1751a
+=======
+>>>>>>> doodo_work
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -23,6 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class MainAPIController {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> doodo_work
@@ -33,4 +37,6 @@ public class MainAPIController {
     
 =======
 >>>>>>> e50ce01f8c9ba1202199c70ec1f992690af1751a
+=======
+>>>>>>> doodo_work
 }

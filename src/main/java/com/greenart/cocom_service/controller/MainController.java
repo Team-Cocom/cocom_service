@@ -4,11 +4,14 @@ package com.greenart.cocom_service.controller;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> doodo_work
 =======
 >>>>>>> e50ce01f8c9ba1202199c70ec1f992690af1751a
 
+=======
+>>>>>>> doodo_work
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
@@ -68,10 +71,13 @@ public class MainController {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> e50ce01f8c9ba1202199c70ec1f992690af1751a
  
+=======
+>>>>>>> doodo_work
 
     @GetMapping("/login")
     public String getLogin(){
@@ -84,10 +90,13 @@ public class MainController {
         return "redirect:/";
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> d520f31a98355d50a160909985c4d6d0fe14fa1c
 =======
 >>>>>>> doodo_work
 =======
 
 >>>>>>> e50ce01f8c9ba1202199c70ec1f992690af1751a
+=======
+>>>>>>> doodo_work
 }
