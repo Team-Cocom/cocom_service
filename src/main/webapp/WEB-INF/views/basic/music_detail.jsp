@@ -32,9 +32,8 @@
                             <span>
                                 <fmt:formatDate value="${list.mu_reg_dt}" pattern="yyyy.MM.dd" /></span>
                         </div>
-                        <audio src="/images/music/${list.mu_music_file}" controls class="music_play"></audio>
                         <div class="music_list_add">
-                            <button class="add_playlist_btn"> 재생리스트 추가</button>
+                            <button data-seq="${list.mu_seq}" class="mu_info"></button>
                             <button class="add_list_btn"> 내리스트 추가 </button>
                         </div>
                     </div>
@@ -43,7 +42,6 @@
         <div class="lyrics_detail_area">
             <div class="lyrics_area">가사</div>
             <div class="lyrics_detail">${list.mu_lyrics}</div>
-            <button data-seq="${list.mu_seq}" class="mu_info">play</button>
         </div>
         </div>
     </main>

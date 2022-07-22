@@ -26,6 +26,11 @@ public class PlayListAPIController {
     public Map<String,Object> putPlayList(HttpSession session,@RequestParam Integer seq){
         Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
         MemberInfoVO member = (MemberInfoVO)session.getAttribute("user");
+        if(member == null){
+            resultMap.put("status", false);
+            resultMap.put("message","로그인이 필요한 서비스입니다.");
+            return resultMap;
+        }
         MemberInfoVO member_pass = pass_mapper.selectMemberInfoBySeq(member.getMi_seq());
         if(member_pass.getMi_ps_seq() == null){
             resultMap.put("status", false);

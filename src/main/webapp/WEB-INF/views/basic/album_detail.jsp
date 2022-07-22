@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="/assets/js/music_detail.js"></script>
 </head>
 <body>
     <main>
@@ -69,7 +70,7 @@
                         <td>${item.mu_name}</td>
                         <td>${item.gr_name}</td>
                         <td>
-                            <audio src="/images/music/${item.mu_music_file}" controls></audio>
+                            <button data-seq="${item.mu_seq}" class="mu_info">play</button>
                         </td>
                         <td>
                             <c:if test="${item.mu_age == 0}">전체</c:if>
