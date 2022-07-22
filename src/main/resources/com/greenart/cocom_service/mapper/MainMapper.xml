@@ -2,11 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.greenart.cocom_service.mapper.MainMapper">
-<<<<<<< HEAD
-=======
     <!-- 인덱스 스와이프 AREA  -->
 
->>>>>>> e50ce01f8c9ba1202199c70ec1f992690af1751a
     <select id="selectAllFromAlbumIndex" resultType="com.greenart.cocom_service.data.adminRecommendIndex">
           select a.ard_seq,a.ard_title ,b.mu_name ,b.mu_img_file ,c.ai_name  
         from admin_recommend a inner join music_info b 

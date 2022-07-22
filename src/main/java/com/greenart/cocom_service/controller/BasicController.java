@@ -25,4 +25,8 @@ public class BasicController {
         model.addAttribute("list", basic_mapper.selectAlbumDetail(album_no));
         return "/basic/album_detail";
     }
+    @GetMapping("/mymusic/list")
+    public String myMusicList(Model model) {
+        return "basic/mymusic";
+    }
 }

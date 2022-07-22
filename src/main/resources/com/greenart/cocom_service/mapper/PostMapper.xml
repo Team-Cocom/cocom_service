@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.greenart.cocom_service.mapper.PostMapper">
+    <select id="selectAllfromNoticeInfo" resultType="com.greenart.cocom_service.data.NoticeInfoVO">
+        select * from notice_info where ni_title like '%${keyword}%'
+        limit 10 offset #{offset}
+    </select>
+    <select id="selectNoticePageCnt" resultType="java.lang.Integer">
+        select ceil(count(*)/10) from notice_info where ni_title like '%${keyword}%'
+    </select>
+    <select id="selectNoticeInfoBySeq" resultType="com.greenart.cocom_service.data.NoticeInfoVO">
+        select * from notice_info where ni_seq =#{post_no}
+    </select>
+    <select id="selectAllNoticeInfo" resultType="com.greenart.cocom_service.data.NoticeInfoVO">
+        select * from notice_info
+    </select>
+</mapper>

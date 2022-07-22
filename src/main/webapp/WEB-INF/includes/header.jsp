@@ -7,7 +7,7 @@
     response.setHeader("Pragma", "no-cache");
     response.setDateHeader("Expires", 0);
 %>
-<!DOCTYPE html>
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -24,11 +24,6 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <title>Document</title>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
 </head>
 <body>
     <header>
@@ -37,7 +32,7 @@
         <a href="/">
             <img src="/assets/images/cocom_logo.png">
         </a>
-        <a href="#">내보관함</a>
+        <a href="/mymusic/list">내보관함</a>
         <a href="/pass">이용권</a>
         <div class="search_box">
             <form action="#" method="get">
@@ -47,7 +42,7 @@
         </div>
     </div>
     <div class="header_right_area">
-        <a href="#">공지사항</a>
+        <a href="/notice">공지사항</a>
         <c:if test="${user != null}">
             <a href="/logout">로그아웃</a>
             <a href="/myinfo/modify"></a>

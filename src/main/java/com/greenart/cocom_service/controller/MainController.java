@@ -1,17 +1,6 @@
 package com.greenart.cocom_service.controller;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> doodo_work
-=======
->>>>>>> e50ce01f8c9ba1202199c70ec1f992690af1751a
 
-=======
->>>>>>> doodo_work
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
@@ -21,13 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.Nullable;
-<<<<<<< HEAD
-import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-=======
-
->>>>>>> e50ce01f8c9ba1202199c70ec1f992690af1751a
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -68,16 +51,7 @@ public class MainController {
         model.addAttribute("album_list", main_mapper.selectAllAlbum());
         return "/index";
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> e50ce01f8c9ba1202199c70ec1f992690af1751a
- 
-=======
->>>>>>> doodo_work
+
 
     @GetMapping("/login")
     public String getLogin(){
@@ -89,14 +63,6 @@ public class MainController {
         session.invalidate();
         return "redirect:/";
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> d520f31a98355d50a160909985c4d6d0fe14fa1c
-=======
->>>>>>> doodo_work
-=======
 
->>>>>>> e50ce01f8c9ba1202199c70ec1f992690af1751a
-=======
->>>>>>> doodo_work
+
 }

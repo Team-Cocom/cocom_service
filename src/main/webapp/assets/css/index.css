@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> e50ce01f8c9ba1202199c70ec1f992690af1751a
 main{
     min-width: 1280px;
 }
@@ -90,8 +86,6 @@ background-repeat: no-repeat; border-radius: 10px; margin-top: 30px;
 .music_summary_item .album_name{
     font-size: 22px; color: #000;
 }
-<<<<<<< HEAD
-=======
 
 .main_banner {
     width: 955px; margin: 0 auto; height: 393px;
@@ -111,4 +105,3 @@ background-repeat: no-repeat; border-radius: 10px; margin-top: 30px;
 .recommend_list_wrap.fourth{background-color: #61484b;}
 .recommend_list_wrap.fifth{background-color: #4c4863;}
 
->>>>>>> e50ce01f8c9ba1202199c70ec1f992690af1751a
