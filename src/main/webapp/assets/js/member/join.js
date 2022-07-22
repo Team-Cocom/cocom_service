@@ -102,6 +102,7 @@ $(function(){
             agreeAlrim = 1;
         }
 
+
         let data = {
         "mi_id":$("#mi_id").val(),
         "mi_pwd":$("#mi_pwd").val(),

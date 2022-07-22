@@ -2,20 +2,45 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.greenart.cocom_service.mapper.MainMapper">
+<<<<<<< HEAD
+=======
+    <!-- 인덱스 스와이프 AREA  -->
+
+>>>>>>> e50ce01f8c9ba1202199c70ec1f992690af1751a
     <select id="selectAllFromAlbumIndex" resultType="com.greenart.cocom_service.data.adminRecommendIndex">
-        select a.ard_seq,a.ard_title ,b.mu_name ,b.mu_img_file ,c.ai_name  
+          select a.ard_seq,a.ard_title ,b.mu_name ,b.mu_img_file ,c.ai_name  
         from admin_recommend a inner join music_info b 
         on a.ard_mu_seq = b.mu_seq inner join artist_info c 
         on c.ai_seq = b.mu_ai_seq
         group by ard_title
-        limit 1 offset #{offset}
+        order by ard_seq desc
+        limit 5 
     </select>
     <select id="selectAllFromMusicIndex" resultType="com.greenart.cocom_service.data.adminMusicIndex">
-        select a.mu_seq,a.mu_name ,a.mu_img_file,a.mu_age,b.ard_title,c.ai_name  from music_info a inner join admin_recommend b
-        inner join artist_info c on a.mu_ai_seq = c.ai_seq 
-        where  a.mu_seq  = b.ard_mu_seq and b.ard_title = #{title}
-        group by mu_name limit 8
+        select a.mu_seq ,a.mu_name ,a.mu_img_file ,b.ai_name,c.ard_title
+        from music_info a inner join artist_info b on a.mu_ai_seq = b.ai_seq inner join
+        (
+        	        select ard_seq,ard_title,ard_mu_seq
+        			from admin_recommend 
+        			order by ard_seq desc
+        			
+        )c on ard_mu_seq = mu_seq 
+        group by mu_name,ard_title
+        having  ard_title = #{title}
+        order by mu_seq  desc
+        limit 10
     </select>
+    <select id="selectCountALLRecommendMusic" resultType="java.lang.Integer">
+        select count(*)  from admin_recommend a inner join music_info b
+        on a.ard_mu_seq = b.mu_seq 
+        group by a.ard_title 
+        order by a.ard_seq desc
+        limit 5
+    </select>
+    <!-- ==================== -->
+
+
+    <!-- 노래 추천 AREA -->
     <select id="selectAllNewMusic" resultType="com.greenart.cocom_service.data.MusicSummary">
         select a.mu_seq ,a.mu_name ,a.mu_img_file ,b.ai_name 
         from music_info a inner join artist_info b on a.mu_ai_seq = b.ai_seq
@@ -35,4 +60,5 @@
         order by ab_seq desc
         limit 10
     </select>
+    <!-- ==================== -->
 </mapper>

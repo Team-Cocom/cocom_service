@@ -7,12 +7,21 @@
         FROM member_info
         WHERE mi_id=#{mi_id} and mi_pwd =#{mi_pwd}
     </select>
+
     <insert id="joinMember">
         INSERT INTO member_info
             (mi_id, mi_pwd, mi_name, mi_birth, mi_addr, mi_role, mi_profile_img, mi_nickname, mi_gen, mi_status, mi_use,mi_alim, mi_phone)
         VALUES
             (#{mi_id}, #{mi_pwd}, #{mi_name}, #{mi_birth}, #{mi_addr}, #{mi_role}, #{mi_profile_img}, #{mi_nickname}, #{mi_gen}, #{mi_status}, #{mi_use},#{mi_alim}, #{mi_phone})
     </insert>
+
+    <insert id="insertMemberToArtist">
+        INSERT INTO cocom_db.artist_info
+            (ai_name, ai_img_file, ai_debut_dt, ai_mi_seq)
+            VALUES
+            (#{ai_name}, #{ai_img_file}, now(), #{ai_mi_seq})
+    </insert>
+
     <select id="isDuplicatedId" resultType="java.lang.Integer">
         select count(*) from member_info where mi_id = #{id}
     </select>

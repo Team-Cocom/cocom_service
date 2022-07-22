@@ -12,8 +12,9 @@ import com.greenart.cocom_service.data.adminRecommendIndex;
 
 @Mapper
 public interface MainMapper {
-    public adminRecommendIndex selectAllFromAlbumIndex(Integer offset);
+    public List<adminRecommendIndex> selectAllFromAlbumIndex();
     public List<adminMusicIndex> selectAllFromMusicIndex(String title);
+    public List<Integer> selectCountALLRecommendMusic();
     public List<MusicSummary> selectAllNewMusic();
     public List<MusicAndGenreSummary> selectAllMusicFromGenre();
     public List<AlbumSummary> selectAllAlbum();

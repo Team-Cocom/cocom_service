@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.theme.min.css" integrity="sha512-9h7XRlUeUwcHUf9bNiWSTO9ovOWFELxTlViP801e5BbwNJ5ir9ua6L20tEroWZdm+HFBAWBLx2qH4l4QHHlRyg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="/assets/js/common/util.js"></script>
     <script src="/assets/js/header.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <title>Document</title>
 <!DOCTYPE html>
 <html>
@@ -36,7 +38,7 @@
             <img src="/assets/images/cocom_logo.png">
         </a>
         <a href="#">내보관함</a>
-        <a href="#">이용권</a>
+        <a href="/pass">이용권</a>
         <div class="search_box">
             <form action="#" method="get">
                 <input type="text" name="keyword" value="${keyword}" placeholder="     검색어를 입력하세요.">

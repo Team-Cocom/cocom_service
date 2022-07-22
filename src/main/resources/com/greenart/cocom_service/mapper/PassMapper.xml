@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.greenart.cocom_service.mapper.PassMapper">
+    <select id="selectAllNomalPass" resultType="com.greenart.cocom_service.data.PassInfoVO">
+        select ps_seq ,ps_type ,ps_name ,ps_price ,ps_img_file ,ps_period  from pass_info
+        where ps_type = 1
+    </select>
+</mapper>

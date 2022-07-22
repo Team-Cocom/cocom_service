@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> e50ce01f8c9ba1202199c70ec1f992690af1751a
 main{
     min-width: 1280px;
 }
@@ -86,3 +90,25 @@ background-repeat: no-repeat; border-radius: 10px; margin-top: 30px;
 .music_summary_item .album_name{
     font-size: 22px; color: #000;
 }
+<<<<<<< HEAD
+=======
+
+.main_banner {
+    width: 955px; margin: 0 auto; height: 393px;
+}
+.main_banner .swiper-slide img {
+    margin-left: 230px;
+}
+.main_banner .swiper-button-prev {
+    left: 0px; filter:grayscale(1) brightness(10) drop-shadow(2px 2px 5px rgba(0,0,0,0.3));
+}
+.main_banner .swiper-button-next {
+    right: 0px; filter:grayscale(1) brightness(10) drop-shadow(2px 2px 5px rgba(0,0,0,0.3));
+}
+
+.recommend_list_wrap.second{background-color: #444e62;}
+.recommend_list_wrap.third{background-color: #674d45;}
+.recommend_list_wrap.fourth{background-color: #61484b;}
+.recommend_list_wrap.fifth{background-color: #4c4863;}
+
+>>>>>>> e50ce01f8c9ba1202199c70ec1f992690af1751a
