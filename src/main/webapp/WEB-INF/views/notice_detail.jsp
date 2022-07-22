@@ -13,6 +13,7 @@
 
 <body>
     <main>
+        <a href="/notice">돌아가기</a>
         <div class="notice_detail_area">
             <table class="item_list">
                 <thead>
@@ -46,7 +47,6 @@
             </table>
         </div>
         <div class="return_page_area">
-        <a href="/notice">돌아가기</a>
     </div>
     </main>
 </body>

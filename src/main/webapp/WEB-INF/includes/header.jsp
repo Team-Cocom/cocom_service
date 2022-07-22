@@ -37,34 +37,11 @@
         let total = ${playList.size()}
     </script>
     <title>Document</title>
-<<<<<<< HEAD
-</head>
-=======
     </head>
->>>>>>> service_work
 <body>
     <header>
         <div class="header_area">
             <div class="header_left_area">
-<<<<<<< HEAD
-        <a href="/">
-            <img src="/assets/images/cocom_logo.png">
-        </a>
-        <a href="/mymusic/list">내보관함</a>
-        <a href="/pass">이용권</a>
-        <div class="search_box">
-            <form action="#" method="get">
-                <input type="text" name="keyword" value="${keyword}" placeholder="     검색어를 입력하세요.">
-                <button type="submit">검색</button>
-            </form>
-        </div>
-    </div>
-    <div class="header_right_area">
-        <a href="/notice">공지사항</a>
-        <c:if test="${user != null}">
-            <a href="/logout">로그아웃</a>
-            <a href="/myinfo/modify"></a>
-=======
                 <a href="/">
                     <img src="/assets/images/cocom_logo.png">
                 </a>
@@ -78,7 +55,7 @@
                 </div>
             </div>
             <div class="header_right_area">
-                <a href="#">공지사항</a>
+                <a href="/notice">공지사항</a>
                 <c:if test="${user != null}">
                     <a href="/logout">로그아웃</a>
                     <a href="/myinfo/modify"></a>
@@ -122,7 +99,6 @@
                     </div>
                 </c:forEach>
             </div>
->>>>>>> service_work
         </c:if>
         </div>
     </header>

@@ -9,16 +9,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-<<<<<<< HEAD
     <link rel="stylesheet" href="/assets/css/reset.css">
     <link rel="stylesheet" href="/assets/css/music.css">
-=======
->>>>>>> service_work
     <script src="/assets/js/music_detail.js"></script>
 </head>
 
 <body>
-<<<<<<< HEAD
     <main>
         <div class="music_detail_wrap">
             <section class="music_basic_info_area">
@@ -47,29 +43,10 @@
         <div class="lyrics_detail_area">
             <div class="lyrics_area">가사</div>
             <div class="lyrics_detail">${list.mu_lyrics}</div>
+            <button data-seq="${list.mu_seq}" class="mu_info">play</button>
         </div>
         </div>
     </main>
-=======
-        <main>
-            <div class="music_detail_area">
-                <table>
-                    <thead>
-                        <tr>
-                            <td>노래제목</td>
-                            <td></td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>${list.mu_name}</td>
-                            <td><button data-seq="${list.mu_seq}" class="mu_info">play</button></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </main>
->>>>>>> service_work
 </body>
 
 </html>

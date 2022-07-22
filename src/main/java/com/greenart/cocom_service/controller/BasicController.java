@@ -7,7 +7,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 import com.greenart.cocom_service.mapper.BasicMapper;
 
 @Controller
@@ -17,11 +16,6 @@ public class BasicController {
     public String musicDetailList(Model model, @RequestParam @Nullable Integer music_no) {
         
         model.addAttribute("list", basic_mapper.selectMusicDetail(music_no));
-<<<<<<< HEAD
-        
-=======
-
->>>>>>> service_work
         return "/basic/music_detail";
     }
     @GetMapping("/album/detail")
