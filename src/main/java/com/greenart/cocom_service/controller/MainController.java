@@ -1,15 +1,8 @@
 package com.greenart.cocom_service.controller;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> doodo_work
-
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
-=======
->>>>>>> d520f31a98355d50a160909985c4d6d0fe14fa1c
+
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -45,12 +38,6 @@ public class MainController {
         model.addAttribute("music_list", music_list);
         return "/index";
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
- 
->>>>>>> doodo_work
-=======
 
     @GetMapping("/login")
     public String getLogin(){
@@ -62,7 +49,4 @@ public class MainController {
         session.invalidate();
         return "redirect:/";
     }
->>>>>>> d520f31a98355d50a160909985c4d6d0fe14fa1c
-=======
->>>>>>> doodo_work
 }

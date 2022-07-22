@@ -3,6 +3,7 @@
 <%@include file="/WEB-INF/includes/header.jsp"%>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,51 +11,41 @@
     <title>Document</title>
     <link rel="stylesheet" href="/assets/css/reset.css">
     <link rel="stylesheet" href="/assets/css/music.css">
+    <script src="/assets/js/music_detail.js"></script>
 </head>
+
 <body>
-        <main>
-            <div class="music_detail_area">
-                <div class="music_basic_info">
-                <div class="music_title_img" style="background-image: url('/images/album_cover/${list.ab_img_file}'); width: 240px; height: 240px;">
+    <main>
+        <div class="music_detail_wrap">
+            <section class="music_basic_info_area">
+                <div class="music_title_img_item">
+                    <div class="music_title_img"
+                        style="background-image: url('/images/album_cover/${list.ab_img_file}'); width: 220px; height: 240px;">
+                    </div>
                 </div>
-                <div class="music_list_add">
-                    <button> 재생리스트 추가</button>
-                    <button> 내리스트 추가 </button>
-                </div>
-                </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <td>노래제목</td>
-                            <td>앨범이름</td>
-                            <td>장르</td>
-                            <td>발매일</td>
-                            
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>${list.mu_name}</td>
-                            <td>${list.ab_name}
-                                <a href="/album/detail?album_no=${list.ab_seq}"></a>
-                            </td>
-                            <td>
-                                <c:choose>
-                                <c:when test="${list.mu_gr_seq == 1}">락</c:when>
-                                <c:when test="${item.mu_gr_seq == 3}">발라드</c:when>
-                            </c:choose>
-                        </td>
-                        <td>
-                            <span><fmt:formatDate value="${list.mu_reg_dt}" pattern="yyyy.MM.dd"/></span>
-                        <td>
-                           
-                        </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="lyrics_area">가사</div>
-                <div class="lyrics_detail">${list.mu_lyrics}</div>
-            </div>
-        </main>
+                <div class="music_basic_info_item">
+                    <div class="music_summary_area">
+                        <p class="music_album_name_area">${list.ab_name}</p>
+                        <p class="music_title_name_area">${list.mu_name}</p>
+                        <p class="music_title_artist_name_area">${list.ai_name}</p>
+                        <div class="music_release_area">
+                            <span>
+                                <fmt:formatDate value="${list.mu_reg_dt}" pattern="yyyy.MM.dd" /></span>
+                        </div>
+                        <audio src="/images/music/${list.mu_music_file}" controls class="music_play"></audio>
+                        <div class="music_list_add">
+                            <button class="add_playlist_btn"> 재생리스트 추가</button>
+                            <button class="add_list_btn"> 내리스트 추가 </button>
+                        </div>
+                    </div>
+            </section>
+        </div>
+        <div class="lyrics_detail_area">
+            <div class="lyrics_area">가사</div>
+            <div class="lyrics_detail">${list.mu_lyrics}</div>
+        </div>
+        </div>
+    </main>
 </body>
+
 </html>
