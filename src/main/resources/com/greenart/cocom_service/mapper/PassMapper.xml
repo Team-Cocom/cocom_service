@@ -5,5 +5,37 @@
     <select id="selectAllNomalPass" resultType="com.greenart.cocom_service.data.PassInfoVO">
         select ps_seq ,ps_type ,ps_name ,ps_price ,ps_img_file ,ps_period  from pass_info
         where ps_type = 1
+        group by ps_name
+    </select>
+    <select id="selectPassInfoBySeq" resultType="com.greenart.cocom_service.data.PassInfoVO">
+        select * from pass_info where ps_seq = #{ps_seq}
+    </select>
+    <select id="selectMemberInfoBySeq" resultType="com.greenart.cocom_service.data.MemberInfoVO">
+        select * from member_info where mi_seq = #{seq}
+    </select>
+    <insert id="inertPassToMember" parameterType="com.greenart.cocom_service.data.PassInfoVO" useGeneratedKeys="true" keyProperty="ps_seq">
+        INSERT INTO pass_info
+        (ps_type, ps_mi_buy_dt, ps_name, ps_price, ps_mi_seq, ps_period, ps_mi_end_dt)
+        VALUES
+        (#{ps_type}, now(), #{ps_name}, #{ps_price}, #{ps_mi_seq}, #{ps_period}, DATE_ADD(NOW(), INTERVAL 1 MINUTE));
+    </insert>
+    <update id="updateMemberPass">
+        UPDATE member_info
+        SET 
+        mi_ps_seq=#{mi_ps_seq}
+        WHERE mi_seq=#{mi_seq}
+    </update>
+    <delete id="deletePassInfo">
+        delete from pass_info where ps_seq = #{seq}
+    </delete>
+    <update id="updateAfterPassInfo">
+    update member_info
+    set mi_ps_seq = 0
+    where mi_seq = #{seq}
+    </update>
+    <select id="passMemberInfo" resultType="java.lang.Integer">
+        select ps_seq  from pass_info 
+        where ps_mi_end_dt  between now() and ps_mi_end_dt 
+        and ps_seq = #{seq}
     </select>
 </mapper>

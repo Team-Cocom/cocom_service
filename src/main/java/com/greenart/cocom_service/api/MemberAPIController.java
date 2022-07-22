@@ -1,5 +1,7 @@
 package com.greenart.cocom_service.api;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -19,12 +21,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.greenart.cocom_service.data.ArtistVO;
 import com.greenart.cocom_service.data.MemberInfoVO;
+import com.greenart.cocom_service.data.PassInfoVO;
 import com.greenart.cocom_service.mapper.MemberMapper;
+import com.greenart.cocom_service.mapper.PassMapper;
+import com.greenart.cocom_service.mapper.PlayListMapper;
 import com.greenart.cocom_service.util.AESAlgorithm;
 
 @RestController
 @RequestMapping("/api/member")
 public class MemberAPIController {
+    @Autowired PlayListMapper play_list_mapper;
+    @Autowired PassMapper pass_mapper;
     @Autowired MemberMapper member_mapper;
     @PutMapping("/join")
     public ResponseEntity<Map<String, Object>> putMemberJoin(@RequestBody MemberInfoVO data) throws Exception{
@@ -72,6 +79,34 @@ public class MemberAPIController {
         session.setAttribute("user", user);
         resultMap.put("status", true);
         resultMap.put("message", "로그인 되었습니다.");
+        return resultMap;
+    }
+
+    @GetMapping("/login")
+    public Map<String,Object> getLogin(HttpSession session){
+        Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
+        resultMap.put("user", session.getAttribute("user"));
+        return resultMap;
+    }
+
+    @GetMapping("/user")
+    public Map<String,Object> getuser(HttpSession session){
+        Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+        MemberInfoVO member = (MemberInfoVO)session.getAttribute("user");
+        if(member == null){
+            return resultMap;
+        }
+        MemberInfoVO member_pass = pass_mapper.selectMemberInfoBySeq(member.getMi_seq());
+        Integer passMember = pass_mapper.passMemberInfo(member_pass.getMi_ps_seq());
+        if(passMember == null && member_pass.getMi_ps_seq() != 0){
+            pass_mapper.updateAfterPassInfo(member_pass.getMi_seq());
+            session.setAttribute("playList", null);
+            return resultMap;
+        }
+        if( member_pass.getMi_ps_seq() == 0){
+            return resultMap;
+        }
+        session.setAttribute("playList", play_list_mapper.selectPlayListToMember(member_pass.getMi_seq()));
         return resultMap;
     }
 

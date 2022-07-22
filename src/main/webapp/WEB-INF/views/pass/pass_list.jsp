@@ -8,6 +8,7 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="/assets/css/pass.css">
+    <script src="/assets/js/pass.js"></script>
 </head>
 
 <body>
@@ -26,8 +27,8 @@
                     <p>가격</p>
                     <p>${item.ps_price}원</p>
                     <p>기간</p>
-                    <p>${item.ps_period}일</p>
-                    <button>구매</button>
+                    <p>${item.ps_period}분</p>
+                    <button class="pass_nomal_button" user-seq="${user.mi_seq}" data-seq="${item.ps_seq}">구매</button>
                 </div>
             </section>
         </c:forEach>

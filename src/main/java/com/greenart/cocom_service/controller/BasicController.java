@@ -17,7 +17,11 @@ public class BasicController {
     public String musicDetailList(Model model, @RequestParam @Nullable Integer music_no) {
         
         model.addAttribute("list", basic_mapper.selectMusicDetail(music_no));
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> service_work
         return "/basic/music_detail";
     }
     @GetMapping("/album/detail")

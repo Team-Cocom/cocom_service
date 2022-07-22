@@ -1,14 +1,48 @@
 var swit = true;
 $(function(){
+    $.ajax({
+        url:"/api/member/user",
+        type:"get",
+        success:function(r){}
+    })
     $(".music_inventory_button").click(function(){
         if(swit) {
             $(".music_inventory_area").removeClass("on"); 
+            $(".music_inventory_area").hide(); 
         }
         else {
-            $(".music_inventory_area").addClass("on"); 
+            $(".music_inventory_area").addClass("on");
+            $(".music_inventory_area").show();  
         }
         swit = !swit;
     })
+
+
+        $(".music_inventory").click(function(){
+            now_playing = $(this).index();
+            let img = $(this).find(".img").val();
+            let music = $(this).find(".music").val();
+            let music_name = $(this).find(".music_name_input").val();
+            let artist = $(this).find(".artist_input").val();
+            $(".play_music_name").html(music_name);
+            $(".play_music_artist").html(artist);
+            $(".play_music_img").css("background-image", "url('"+img+"')");
+            $("#play_music").attr("src", music);
+            document.getElementById('play_music').play();
+        })
+        
+        document.getElementById('play_music').ontimeupdate = function(){
+            if(this.duration == this.currentTime) {
+                if(now_playing == total-1) {
+                    now_playing = 0;
+                }
+                else {
+                    now_playing++;
+                }
+                $(".music_inventory").eq(now_playing).trigger('click');
+                this.play();
+            }
+        }
     
 })
 
