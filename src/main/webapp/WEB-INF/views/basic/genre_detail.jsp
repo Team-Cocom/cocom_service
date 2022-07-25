@@ -3,26 +3,31 @@
 <%@include file="/WEB-INF/includes/header.jsp"%>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/genre_detail.css">
 </head>
+
 <body>
     <main>
-        <h1>${list[0].gr_name} 음악</h1>
-        <section class="movie_list_section">
-        <div class="movieList openList on">
-                <h2 class="movie_item">
-                    <div class="ab_like">
-                        <p>
-                            <i class="fas fa-thumbs-up">121</i>
-                        </p>
-                    </div>
-                </h2>    
+        <div class="music_title_area">
+            <h1>${list[0].gr_name} 음악</h1>
+            <section class="movie_list_section">
+                <div class="movieList openList on">
+                    <h2 class="movie_item">
+                        <div class="ab_like">
+                            <p>
+                                <i class="fas fa-thumbs-up">121</i>
+                            </p>
+                        </div>
+                    </h2>
+                </div>
+            </section>
         </div>
-    </section>
         <table>
             <thead>
                 <tr>
@@ -40,8 +45,7 @@
                     <tr>
                         <td>${stat.count}</td>
                         <td>
-                            <div class="poster_img"
-                            style="background-image:url('/images/music_cover/${item.mu_img_file}');
+                            <div class="poster_img" style="background-image:url('/images/music_cover/${item.mu_img_file}');
                             width:60px; height:80px; background-size: auto 100%;
                             background-repeat: no-repeat;">
                             </div>
@@ -54,13 +58,13 @@
                             <c:if test="${item.mu_age == 19}">성인</c:if>
                         </td>
                         <td>
-                            <input type="checkbox" class="music_check" data-seq="${item.mu_seq}" filename="${item.mu_music_file}">
+                            <input type="checkbox" class="music_check" data-seq="${item.mu_seq}"
+                                filename="${item.mu_music_file}">
                         </td>
                     </tr>
                 </c:forEach>
             </tbody>
         </table>
-        
     </main>
 </body>
 </html>
