@@ -14,7 +14,7 @@
 
 <body>
     <main>
-        <div class="music_title_area">
+        <div class="music_title_area"> 
             <h1>${list[0].gr_name} 음악</h1>
             <section class="movie_list_section">
                 <div class="movieList openList on">
