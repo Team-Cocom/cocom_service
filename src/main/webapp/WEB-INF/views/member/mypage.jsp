@@ -44,6 +44,7 @@
                     <a href="#" class="lnb_item">
                         <span class="lnb_text">유료멤버쉽</span>
                     </a>
+                    <a href="/music/upload?member_no=${user.mi_seq}">노래 업로드</a>
                 </div>
             </div>
 

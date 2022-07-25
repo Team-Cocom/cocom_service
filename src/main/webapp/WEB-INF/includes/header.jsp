@@ -72,7 +72,7 @@
                 </c:if>
             </div>
         </div>
-        <div class="music_play_area">
+        <div class="music_play_area" hidden>
             <div class="music_play_list">
                 <p class="play_music_img"></p>
                 <span class="play_music_name"></span>

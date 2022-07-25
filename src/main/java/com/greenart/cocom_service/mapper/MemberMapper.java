@@ -5,6 +5,8 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.greenart.cocom_service.data.ArtistInfoVO;
+import com.greenart.cocom_service.data.GenreInfo;
+import com.greenart.cocom_service.data.MemberAndArtistVO;
 import com.greenart.cocom_service.data.MemberInfoVO;
 
 @Mapper
@@ -22,4 +24,7 @@ public interface MemberMapper {
     public MemberInfoVO selectMemberInfoBySeq(Integer user_no);
     public void updateMemberInfos(MemberInfoVO data);
     public void deleteProfileImg(Integer seq);
+
+    public MemberAndArtistVO selectMemberAndArtistInfo(Integer seq);
+    public List<GenreInfo> selectGenreInfos();
 }
