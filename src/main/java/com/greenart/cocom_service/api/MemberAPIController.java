@@ -10,6 +10,8 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.lang.Nullable;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.greenart.cocom_service.data.ArtistVO;
+import com.greenart.cocom_service.data.ArtistInfoVO;
 import com.greenart.cocom_service.data.MemberInfoVO;
 import com.greenart.cocom_service.data.PassInfoVO;
 import com.greenart.cocom_service.mapper.MemberMapper;
@@ -39,6 +41,13 @@ public class MemberAPIController {
         data.setMi_pwd(AESAlgorithm.Encrypt(data.getMi_pwd()));
         try {
             member_mapper.joinMember(data);
+            if(data.getMi_role() == 2){
+                ArtistInfoVO artist = new ArtistInfoVO();
+                artist.setAi_mi_seq(data.getMi_seq());
+                artist.setAi_name(data.getMi_name());
+                artist.setAi_img_file(data.getMi_profile_img());
+                member_mapper.insertMemberInfoToArtist(artist);
+            }
         }
         catch(Exception e) {
             if(e.getMessage().indexOf("Duplicate") > 0 ) {
@@ -50,7 +59,6 @@ public class MemberAPIController {
             resultMap.put("status", false);
             e.printStackTrace();
             return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.INTERNAL_SERVER_ERROR);
-
         }
         resultMap.put("message","회원가입이 완료되엇습니다.");
         resultMap.put("status", true);
@@ -61,6 +69,11 @@ public class MemberAPIController {
     @GetMapping("/id_chk")
     public Boolean getMemberIDCheck(@RequestParam String id) {
         return member_mapper.IsDuplicateCheck(id) == 1;
+    }
+    
+    @GetMapping("/phone_chk")
+    public Boolean getMemberPhoneCheck(@RequestParam String phone_no) {
+        return member_mapper.isDuplicatePhone(phone_no) ==  1;
     }
 
     @PostMapping("/login")
@@ -110,32 +123,24 @@ public class MemberAPIController {
         return resultMap;
     }
 
-    @PatchMapping("/update")
-    public Map<String, Object> patchMemberLogin(@RequestBody MemberInfoVO data) {
+    @PatchMapping("/modify")
+    public Map<String, Object> patchMemberLogin(@RequestBody MemberInfoVO data, @RequestParam @Nullable Integer seq) {
         Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
-        if(data.getMi_seq() == null) {
-            resultMap.put("status", false);
-            resultMap.put("message","사용자 번호가 입력되지 않았습니다.");
-            return resultMap;
-        }
         if(data.getMi_pwd() == null || data.getMi_pwd().equals("")) {
             resultMap.put("status", false);
             resultMap.put("message", "비밀번호를 입력하지 않았습니다.");
-            return resultMap;
-        }
-        if(data.getMi_name()== null || data.getMi_name().equals("")) {
-            resultMap.put("status", false);
-            resultMap.put("message", "이름을 입력하지 않았습니다.");
-            return resultMap;
-        }
-        if(data.getMi_role()== null || data.getMi_role().equals("")) {
-            resultMap.put("status", false);
-            resultMap.put("message", "계정 가입 유형을 입력하지 않았습니다.");
             return resultMap;
         }
         member_mapper.updateMemberInfos(data);
         resultMap.put("status", true);
         resultMap.put("message", "계정 정보를 수정하였습니다.");
             return resultMap;
+    }
+    @PatchMapping("/delete/profile_img")
+    public Map<String,Object> patchProfileImg(@RequestParam Integer seq){
+        Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
+        member_mapper.deleteProfileImg(seq);
+        resultMap.put("message", "프로필 이미지 삭제를 완료하였습니다.");
+        return resultMap;
     }
 }

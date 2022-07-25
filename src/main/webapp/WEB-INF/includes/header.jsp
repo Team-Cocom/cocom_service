@@ -59,12 +59,17 @@
                 <a href="/notice">공지사항</a>
                 <c:if test="${user != null}">
                     <a href="/logout">로그아웃</a>
-                    <a href="/myinfo/modify"></a>
                 </c:if>
                 <c:if test="${user == null}">
                     <a href="/login">로그인</a>
                 </c:if>
-                <a href="/join">회원가입</a>
+                <c:if test="${user == null}">
+                    <a href="/join">회원가입</a>
+                </c:if>
+                <c:if test="${user != null}">
+                    <a href="/mypage?member_no=${user.mi_seq}">마이페이지</a>
+                    <a href="/myinfo/modify"></a>
+                </c:if>
             </div>
         </div>
         <div class="music_play_area">
@@ -101,7 +106,7 @@
                 </c:forEach>
             </div>
         </c:if>
-        </div>
+    </div>
     </header>
 </div>
 </body>

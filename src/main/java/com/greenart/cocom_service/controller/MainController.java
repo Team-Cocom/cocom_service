@@ -1,9 +1,6 @@
 package com.greenart.cocom_service.controller;
 
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -49,7 +46,6 @@ public class MainController {
         model.addAttribute("album_list", main_mapper.selectAllAlbum());
         return "/index";
     }
-
 
     @GetMapping("/login")
     public String getLogin(){

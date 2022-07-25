@@ -8,25 +8,26 @@
         WHERE mi_id=#{mi_id} and mi_pwd =#{mi_pwd}
     </select>
 
-    <insert id="joinMember">
+    <insert id="joinMember" parameterType="com.greenart.cocom_service.data.MemberInfoVO"
+    useGeneratedKeys="true" keyProperty="mi_seq">
         INSERT INTO member_info
-            (mi_id, mi_pwd, mi_name, mi_birth, mi_addr, mi_role, mi_profile_img, mi_nickname, mi_gen, mi_status, mi_use,mi_alim, mi_phone)
+            (mi_id, mi_pwd, mi_name, mi_birth, mi_addr, mi_role, mi_profile_img, mi_nickname, mi_gen,
+            mi_status, mi_use, mi_alim, mi_phone)
         VALUES
-            (#{mi_id}, #{mi_pwd}, #{mi_name}, #{mi_birth}, #{mi_addr}, #{mi_role}, #{mi_profile_img}, #{mi_nickname}, #{mi_gen}, #{mi_status}, #{mi_use},#{mi_alim}, #{mi_phone})
+            (#{mi_id}, #{mi_pwd}, #{mi_name}, #{mi_birth}, #{mi_addr}, #{mi_role}, #{mi_profile_img}, #{mi_nickname},
+            #{mi_gen}, #{mi_status}, #{mi_use},#{mi_alim}, #{mi_phone})
     </insert>
 
-    <insert id="insertMemberToArtist">
-        INSERT INTO cocom_db.artist_info
-            (ai_name, ai_img_file, ai_debut_dt, ai_mi_seq)
-            VALUES
-            (#{ai_name}, #{ai_img_file}, now(), #{ai_mi_seq})
+    <insert id="insertMemberInfoToArtist">
+        INSERT INTO artist_info (ai_name, ai_img_file, ai_debut_dt, ai_mi_seq)
+        VALUES (#{ai_name}, #{ai_img_file}, now(), #{ai_mi_seq})
     </insert>
 
     <select id="isDuplicatedId" resultType="java.lang.Integer">
         select count(*) from member_info where mi_id = #{id}
     </select>
-    <select id="isDuplicatedPhone" resultType="java.lang.Integer">
-        select count(*) from member_info where mi_phone = #{phone}
+    <select id="isDuplicatePhone" resultType="java.lang.Integer">
+        select count(*) from member_info where mi_phone = #{phone_no}
     </select>
     <select id="IsDuplicateCheck" resultType="java.lang.Integer">
         select count(*) from member_info where mi_id = #{id}
@@ -35,14 +36,18 @@
         select * from member_info
     </select>
     <select id="selectMemberInfoBySeq" resultType="com.greenart.cocom_service.data.MemberInfoVO">
-        SELECT mi_id, mi_pwd, mi_name, mi_birth, mi_addr, mi_role, mi_profile_img, mi_nickname, mi_reg_dt, mi_status, mi_use, mi_alim, mi_ps_seq, mi_gen, mi_phone
+        SELECT mi_seq,mi_id, mi_pwd, mi_name, mi_birth, mi_addr, mi_role, mi_profile_img, mi_nickname, mi_reg_dt, mi_status, mi_use, mi_alim, mi_ps_seq, mi_gen, mi_phone
         FROM member_info
         WHERE mi_seq= #{user_no};
     </select>
     <update id="updateMemberInfos">
         UPDATE member_info
-        SET mi_pwd=#{mi_pwd}, mi_name=#{mi_name}, mi_addr=#{mi_addr}, mi_role=#{mi_role}, mi_nickname=#{mi_nickname}, mi_alim=#{mi_alim}, mi_ps_seq=#{mi_ps_seq}, mi_phone=#{mi_phone} 
+        SET mi_pwd=#{mi_pwd}, mi_addr=#{mi_addr}, mi_role=#{mi_role}, mi_profile_img=#{mi_profile_img}, mi_nickname=#{mi_nickname}, mi_alim=#{mi_alim}, mi_ps_seq=#{mi_ps_seq}, mi_phone=#{mi_phone} , mi_mod_dt=now()
         WHERE mi_seq=#{mi_seq}
+    </update>
+    <update id="deleteProfileImg">
+        update member_info
+        set mi_profile_img = '' where mi_seq = #{seq}
     </update>
     
 </mapper>

@@ -71,6 +71,9 @@
                             <td>
                                 <input type="text" id="mi_phone" placeholder="-를 뺴고 입력하세요.">
                             </td>
+                            <td>
+                                <button id="phone_dup_chk">전화인증</button>
+                            </td>
                         </tr>
                         <tr>
                             <td>주소</td>
