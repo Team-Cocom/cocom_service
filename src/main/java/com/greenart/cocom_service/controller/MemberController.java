@@ -21,5 +21,11 @@ public class MemberController {
         model.addAttribute("list", member_mapper.selectMemberInfoBySeq(user_no));
         return "/member/info_detail";
     }
+    
+    @GetMapping("/mypage")
+    public String getMyInfoPage(Model model,@RequestParam Integer member_no) {
+        model.addAttribute("list", member_mapper.selectMemberInfoBySeq(member_no));
+        return "/member/mypage";
+    }
 
 }

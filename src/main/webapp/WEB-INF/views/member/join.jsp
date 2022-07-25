@@ -71,6 +71,9 @@
                             <td>
                                 <input type="text" id="mi_phone" placeholder="-를 뺴고 입력하세요.">
                             </td>
+                            <td>
+                                <button id="phone_dup_chk">전화인증</button>
+                            </td>
                         </tr>
                         <tr>
                             <td>주소</td>
@@ -106,13 +109,9 @@
                 <div class="profile_img_area" filename="${mi_profile_img}">
                 </div>
                 <div class="button_area">
-<<<<<<< HEAD
-                    <button id="join">회원가입</button>
-=======
                     <button id="join">회원가입
                         <a href="/login"></a>
                     </button>
->>>>>>> develop
                     <button id="cancel">들어가기</button>
                 </div>
             </div>

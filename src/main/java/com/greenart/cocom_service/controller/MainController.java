@@ -1,20 +1,15 @@
 package com.greenart.cocom_service.controller;
 
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.lang.Nullable;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.greenart.cocom_service.data.adminMusicIndex;
 import com.greenart.cocom_service.data.adminRecommendIndex;
@@ -51,7 +46,6 @@ public class MainController {
         model.addAttribute("album_list", main_mapper.selectAllAlbum());
         return "/index";
     }
- 
 
     @GetMapping("/login")
     public String getLogin(){

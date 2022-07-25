@@ -1,0 +1,19 @@
+
+.mypage_wrap{width: 1280px; position: relative; margin: 0 auto; }
+.mypage_item {display: inline-block; text-align: left; margin-left: 0; top: 0;
+    background-color: #43c2d8; color: #fff;
+    font-size: 30px; text-decoration: none; font-weight: 600;
+    padding: 15px; width: 270px; height: 700px;
+    }
+.member_join_box{display: inline-block; margin-left: 200px;}
+.profile_img_mark{width: 150px; height: 150px;}
+.profile_img {width: 150px; height: 150px; border-radius: 9999px;
+    background-size: 100%; background-position: center; background-repeat: no-repeat;}
+
+.member_list { width: 100%; }
+.member_list tbody {text-align: center;}
+.member_list td{font-size: 16px; padding: 10px; border-bottom: 1px solid #767676;}
+.member_list tbody td{font-weight: 700; text-align: center; color: black;
+    background-color: #fff;
+}
+.profile_img_area {display: inline-block; margin-left: 200px;}
