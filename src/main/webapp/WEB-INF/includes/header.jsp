@@ -39,6 +39,7 @@
     <title>Document</title>
     </head>
 <body>
+    <div class="wrap">
     <header>
         <div class="header_area">
             <div class="header_left_area">
@@ -102,6 +103,7 @@
         </c:if>
         </div>
     </header>
+</div>
 </body>
 
 </html>
