@@ -190,7 +190,7 @@
         <section class="music_summary_list_section">
             <h1>장르별 추천 리스트😎</h1>
             <c:forEach items="${music_genre_list}" var="item">
-                <a href="/music/genre/detail?genre_no=${item.gr_seq}" class="music_summary_item">
+                <a href="/genre/detail?genre_no=${item.gr_seq}" class="music_summary_item">
                     <div class="music_summary_detail">
                         <div class="music_summary_img"
                             style="background-image: url('/images/music_cover/${item.mu_img_file}');">

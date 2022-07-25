@@ -27,4 +27,9 @@ public class BasicController {
     public String myMusicList(Model model) {
         return "basic/mymusic";
     }
+    @GetMapping("/genre/detail")
+    public String genreDetail(Model model, @RequestParam @Nullable Integer genre_no) {
+        model.addAttribute("list", basic_mapper.selectGenreDetail(genre_no));
+        return "/basic/genre_detail";
+    }
 }

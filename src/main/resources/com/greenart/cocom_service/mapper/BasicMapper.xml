@@ -15,4 +15,11 @@ on b.ab_rci_seq = c.rci_seq inner join enter_info d
 on b.ab_ent_seq = d.ent_seq 
 where ab_seq = #{seq}
 </select>
+<select id="selectGenreDetail" resultType="com.greenart.cocom_service.data.GenrePlaylistVO">
+select * from music_info a inner join genre_info b 
+on a.mu_gr_seq = b.gr_seq 
+where gr_seq = #{seq}
+
+</select>
+
 </mapper>
