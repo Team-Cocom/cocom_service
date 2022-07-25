@@ -12,7 +12,7 @@ public interface PassMapper {
     public List<PassInfoVO> selectAllNomalPass();
     public PassInfoVO selectPassInfoBySeq(Integer ps_seq);
     public MemberInfoVO selectMemberInfoBySeq(Integer seq);
-    public void inertPassToMember(PassInfoVO data);
+    public void insertPassToMember(PassInfoVO data);
     public void updateMemberPass(Integer mi_seq,Integer mi_ps_seq);
     public Integer passMemberInfo(Integer seq);
     public void deletePassInfo(Integer seq);
