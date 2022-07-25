@@ -18,13 +18,7 @@
             <h1>${list[0].gr_name} 음악</h1>
             <section class="movie_list_section">
                 <div class="movieList openList on">
-                    <h2 class="movie_item">
-                        <div class="ab_like">
-                            <p>
-                                <i class="fas fa-thumbs-up">121</i>
-                            </p>
-                        </div>
-                    </h2>
+                    <h2 class="movie_item"></h2>
                 </div>
             </section>
         </div>
@@ -33,11 +27,10 @@
                 <tr>
                     <td>번호</td>
                     <td>노래커버</td>
+                    <td>노래제목</td>
                     <td>노래파일</td>
                     <td>나이</td>
-                    <td>
-                        <input type="checkbox" id="all_checkbox_check">
-                    </td>
+                   
                 </tr>
             </thead>
             <tbody>
@@ -50,17 +43,15 @@
                             background-repeat: no-repeat;">
                             </div>
                         </td>
+                        <td>${item.mu_name}</td>
                         <td>
-                            <audio src="/images/music/${item.mu_music_file}" controls></audio>
+                            <button data-seq="${item.mu_seq}" class="mu_info">play</button>
                         </td>
                         <td>
                             <c:if test="${item.mu_age == 0}">전체</c:if>
                             <c:if test="${item.mu_age == 19}">성인</c:if>
                         </td>
-                        <td>
-                            <input type="checkbox" class="music_check" data-seq="${item.mu_seq}"
-                                filename="${item.mu_music_file}">
-                        </td>
+                       
                     </tr>
                 </c:forEach>
             </tbody>
