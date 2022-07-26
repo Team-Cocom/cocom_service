@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.greenart.cocom_service.mapper.CommentMapper">
+    <insert id="insertAlbumComments">
+        INSERT INTO album_comment
+            (acom_mi_seq, acom_star_score, acom_text, acom_ab_seq)
+        VALUES
+            (#{acom_mi_seq}, #{acom_star_score}, #{acom_text}, #{acom_ab_seq})
+    </insert>
+    <update id="updateAlbumComment">
+        UPDATE album_comment
+        SET 
+        acom_star_score=#{acom_star_score}, acom_text=#{acom_text}, acom_mod_dt=now()
+        WHERE acom_seq=#{acom_seq};
+    </update>
+    <delete id="deleteAlbumComment">
+        delete from album_comment where acom_seq =#{acom_seq}
+    </delete>
+
+    <select id="selectAlbumCommentsBySeq" resultType="com.greenart.cocom_service.data.AlbumComDetails">
+        select * from album_comment_details
+        where acom_ab_seq = #{seq}
+        limit 10 offset #{offset}
+    </select>
+    <select id="selectAlbumCommentPageCount" resultType="java.lang.Integer">
+        select ceil(count(*)/10) from album_comment_details
+        where acom_ab_seq = #{seq}
+    </select>
+    <select id="selectAlbumCommentsCount" resultType="java.lang.Integer">
+        select count(*) from album_comment_details
+        where acom_ab_seq = #{seq}
+    </select>
+    <select id="selectAlbumCommentByMember" resultType="com.greenart.cocom_service.data.AlbumCommentVO">
+        select * from album_comment where acom_mi_seq = #{seq} and acom_ab_seq = #{ab_seq}
+        order by acom_seq desc limit 1 
+    </select>
+
+    <insert id="insertCommentLike">
+        insert into comment_like (cl_mi_seq, cl_ab_seq, cl_like)
+        VALUES (#{cl_mi_seq}, #{cl_ab_seq}, #{cl_like})
+    </insert>
+
+    <select id="selectCommentInfo" resultType="com.greenart.cocom_service.data.CommentLikeVO">
+        select * from comment_like where cl_mi_seq = #{cl_mi_seq} and cl_ab_seq =#{cl_ab_seq}
+    </select>
+    <update id="updateCommentLike">
+        update comment_like set cl_mi_seq=#{cl_mi_seq}, cl_ab_seq=#{cl_ab_seq}, cl_like=#{cl_like}
+        where cl_mi_seq = #{cl_mi_seq} and cl_ab_seq =#{cl_ab_seq}
+    </update>
+
+    <select id="selectAlbumAvgScore" resultType="java.lang.Double">
+        select avg(acom_star_score) from album_comment
+        group by acom_ab_seq
+        having acom_ab_seq = #{seq}
+    </select> 
+    <insert id="insertReportInfo">
+        INSERT INTO comment_report(cr_mi_seq, cr_acom_seq, cr_reasons)
+        VALUES (#{mi_seq}, #{acom_seq}, #{reason})
+    </insert>
+    <select id="isReported" resultType="java.lang.Boolean">
+        select count(*) from comment_report where
+        cr_mi_seq = #{mi_seq} and cr_acom_seq =#{acom_seq}
+    </select>
+
+
+</mapper>

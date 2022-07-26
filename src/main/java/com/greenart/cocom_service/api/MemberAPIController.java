@@ -1,7 +1,5 @@
 package com.greenart.cocom_service.api;
 
-import java.time.LocalDate;
-import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -11,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.lang.Nullable;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,7 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.greenart.cocom_service.data.ArtistInfoVO;
 import com.greenart.cocom_service.data.MemberInfoVO;
-import com.greenart.cocom_service.data.PassInfoVO;
 import com.greenart.cocom_service.mapper.MemberMapper;
 import com.greenart.cocom_service.mapper.PassMapper;
 import com.greenart.cocom_service.mapper.PlayListMapper;

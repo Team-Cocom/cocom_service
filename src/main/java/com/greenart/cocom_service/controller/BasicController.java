@@ -1,5 +1,7 @@
 package com.greenart.cocom_service.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Controller;
@@ -10,9 +12,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 import com.greenart.cocom_service.mapper.BasicMapper;
 import com.greenart.cocom_service.mapper.LikeMapper;
+import com.greenart.cocom_service.service.MusicService;
 
 @Controller
 public class BasicController {
+    @Autowired MusicService music_service;
     @Autowired BasicMapper basic_mapper;
     @Autowired LikeMapper like_mapper;
     @GetMapping("/music/detail")
@@ -23,7 +27,9 @@ public class BasicController {
         return "/basic/music_detail";
     }
     @GetMapping("/album/detail")
-    public String albumDetail(Model model, @RequestParam @Nullable Integer album_no) {
+    public String albumDetail(Model model, @RequestParam @Nullable Integer album_no
+    ,@RequestParam @Nullable Integer user_no, HttpSession session
+    ) {
         model.addAttribute("list", basic_mapper.selectAlbumDetail(album_no));
         model.addAttribute("Like", like_mapper.selectAlbumLikeCount(album_no));
         return "/basic/album_detail";
