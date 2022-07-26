@@ -68,11 +68,10 @@
                 </c:if>
                 <c:if test="${user != null}">
                     <a href="/mypage?member_no=${user.mi_seq}">마이페이지</a>
-                    <a href="/myinfo/modify"></a>
                 </c:if>
             </div>
         </div>
-        <div class="music_play_area">
+        <div class="music_play_area" hidden>
             <div class="music_play_list">
                 <p class="play_music_img"></p>
                 <span class="play_music_name"></span>

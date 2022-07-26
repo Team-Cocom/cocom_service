@@ -46,6 +46,9 @@
                     </a>
                     <a href="/music/upload?member_no=${user.mi_seq}">노래 업로드</a>
                 </div>
+                <div class="comment_area">
+                    <a href="/member/comment">댓글·좋아요 관리</a>
+                </div>
             </div>
 
             <div class="member_join_box">
