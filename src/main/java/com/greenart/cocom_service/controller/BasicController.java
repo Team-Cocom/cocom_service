@@ -9,19 +9,23 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 import com.greenart.cocom_service.mapper.BasicMapper;
+import com.greenart.cocom_service.mapper.LikeMapper;
 
 @Controller
 public class BasicController {
     @Autowired BasicMapper basic_mapper;
+    @Autowired LikeMapper like_mapper;
     @GetMapping("/music/detail")
     public String musicDetailList(Model model, @RequestParam @Nullable Integer music_no) {
         
         model.addAttribute("list", basic_mapper.selectMusicDetail(music_no));
+        model.addAttribute("Like", like_mapper.selectMusicLikeCount(music_no));
         return "/basic/music_detail";
     }
     @GetMapping("/album/detail")
     public String albumDetail(Model model, @RequestParam @Nullable Integer album_no) {
         model.addAttribute("list", basic_mapper.selectAlbumDetail(album_no));
+        model.addAttribute("Like", like_mapper.selectAlbumLikeCount(album_no));
         return "/basic/album_detail";
     }
     @GetMapping("/mymusic/list")

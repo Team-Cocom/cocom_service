@@ -18,7 +18,8 @@
             #{mi_gen}, #{mi_status}, #{mi_use},#{mi_alim}, #{mi_phone})
     </insert>
 
-    <insert id="insertMemberInfoToArtist">
+    <insert id="insertMemberInfoToArtist" parameterType="com.greenart.cocom_service.data.ArtistInfoVO"
+    useGeneratedKeys="true" keyProperty="ai_seq">
         INSERT INTO artist_info (ai_name, ai_img_file, ai_debut_dt, ai_mi_seq)
         VALUES (#{ai_name}, #{ai_img_file}, now(), #{ai_mi_seq})
     </insert>
@@ -49,5 +50,12 @@
         update member_info
         set mi_profile_img = '' where mi_seq = #{seq}
     </update>
-    
+    <select id="selectMemberAndArtistInfo" resultType="com.greenart.cocom_service.data.MemberAndArtistVO">
+        select a.mi_seq,a.mi_id,a.mi_name,b.ai_seq ,b.ai_name ,b.ai_cr_seq  from member_info a left outer join artist_info b
+        on a.mi_seq = b.ai_mi_seq
+        where mi_seq = #{seq}
+    </select>
+    <select id="selectGenreInfos" resultType="com.greenart.cocom_service.data.GenreInfo">
+        select * from genre_info
+    </select>
 </mapper>

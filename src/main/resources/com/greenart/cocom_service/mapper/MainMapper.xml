@@ -58,4 +58,27 @@
         limit 10
     </select>
     <!-- ==================== -->
+
+    <!-- 검색 AREA -->
+    <select id="selectMusicSearchInfo" resultType="com.greenart.cocom_service.data.MusicSummary">
+        select a.mu_seq ,a.mu_name ,a.mu_img_file ,b.ai_name 
+        from music_info a inner join artist_info b on a.mu_ai_seq = b.ai_seq
+        where a.mu_name like '%${keyword}%'
+        order by mu_seq  desc
+        limit 10
+    </select>
+    <select id="selectArtistSearchInfo" resultType="com.greenart.cocom_service.data.ArtistInfoVO">
+        select * from artist_info
+        where ai_name like '%${keyword}%'
+        order by ai_seq desc
+        limit 10
+    </select>
+    <select id="selectMusicLyricsSearchInfo" resultType="com.greenart.cocom_service.data.MusicLyricsVO">
+        select a.mu_seq ,a.mu_name ,a.mu_lyrics ,a.mu_img_file ,b.ai_name  from music_info a inner join artist_info b
+        on a.mu_ai_seq = b.ai_seq 
+        where mu_lyrics like '%${keyword}%'
+        order by mu_seq desc
+        limit 10
+    </select>
+    <!-- ==================== -->
 </mapper>

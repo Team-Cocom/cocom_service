@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.greenart.cocom_service.mapper.MusicMapper">
+    <insert id="insertMusic">
+    INSERT INTO music_info
+    (mu_name, mu_ai_seq, mu_lyrics, mu_ab_seq, mu_img_file, mu_music_file,mu_playtime, mu_explain_txt, mu_age, mu_reg_dt, mu_gr_seq, mu_cr_seq, mu_is_confirm)
+    VALUES
+    (#{mu_name}, #{mu_ai_seq}, #{mu_lyrics}, #{mu_ab_seq}, #{mu_img_file}, #{mu_music_file},#{mu_playtime}, #{mu_explain_txt}, #{mu_age},now(), #{mu_gr_seq}, #{mu_cr_seq}, #{mu_is_confirm})
+    </insert>
+</mapper>

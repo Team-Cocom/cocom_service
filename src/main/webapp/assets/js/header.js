@@ -5,6 +5,8 @@ $(function(){
         type:"get",
         success:function(r){}
     })
+
+
     $(".music_inventory_button").click(function(){
         if(swit) {
             $(".music_inventory_area").removeClass("on"); 
@@ -15,6 +17,18 @@ $(function(){
             $(".music_inventory_area").show();  
         }
         swit = !swit;
+    })
+
+    $(".delete_music_playList").click(function(){
+        if(!confirm("보관함에서 노래를 삭제하시겠습니까?"))return;
+
+            $.ajax({
+                url:"/api/playList/music/delete?seq="+$(this).attr("data-seq"),
+                type:"delete",
+                success:function(r){
+                    location.reload();
+                }
+            })
     })
 
 

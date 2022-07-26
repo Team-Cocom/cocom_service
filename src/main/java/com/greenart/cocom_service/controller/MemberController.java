@@ -27,5 +27,11 @@ public class MemberController {
         model.addAttribute("list", member_mapper.selectMemberInfoBySeq(member_no));
         return "/member/mypage";
     }
+    @GetMapping("/music/upload")
+    public String getMusicUploadPage(Model model,@RequestParam Integer member_no) {
+        model.addAttribute("memberList", member_mapper.selectMemberAndArtistInfo(member_no));
+        model.addAttribute("genreList", member_mapper.selectGenreInfos());
+        return "/member/music_upload";
+    }
 
 }

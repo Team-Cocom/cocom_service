@@ -18,4 +18,7 @@
         group by mu_name 
         order by b.pls_seq asc
     </select>
+    <delete id="deleteMusicFromList">
+        delete from playlist_info where pls_mi_seq = #{mi_seq} and pls_mu_seq = #{mu_seq}
+    </delete>
 </mapper>

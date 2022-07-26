@@ -28,7 +28,7 @@
                     </div>
                     <div class="ab_like">
                         <p>
-                            <i class="fas fa-thumbs-up">121</i>
+                            <button data-seq="${list[0].ab_seq}" user-seq="${user.mi_seq}" class="ab_like"><i class="fas fa-thumbs-up">${Like}</i></button>
                         </p>
                     </div>
                     <div class="album_item_txt">

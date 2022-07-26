@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.Nullable;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -48,6 +49,14 @@ public class PlayListAPIController {
         playList_mapper.insertPlayListInfo(play_list);
         resultMap.put("status", true);
         resultMap.put("message","재생목록에 노래를 추가하였습니다.\n중복 노래는 제외됩니다");
+        return resultMap;
+    }
+
+    @DeleteMapping("playList/music/delete")
+    public Map<String,Object> deleteMusicFromPlayList(HttpSession session,@RequestParam Integer seq){
+        Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
+        MemberInfoVO member = (MemberInfoVO)session.getAttribute("user");
+        playList_mapper.deleteMusicFromList(member.getMi_seq(), seq);
         return resultMap;
     }
 }
