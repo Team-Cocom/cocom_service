@@ -45,6 +45,9 @@
                         <span class="lnb_text">유료멤버쉽</span>
                     </a>
                 </div>
+                <div class="comment_area">
+                    <a href="/member/comment">댓글·좋아요 관리</a>
+                </div>
             </div>
 
             <div class="member_join_box">

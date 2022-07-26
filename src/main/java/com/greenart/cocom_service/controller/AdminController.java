@@ -7,7 +7,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.greenart.cocom_service.data.NoticeInfoVO;
 import com.greenart.cocom_service.mapper.PostMapper;
 
 @Controller

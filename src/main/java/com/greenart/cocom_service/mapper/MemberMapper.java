@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.greenart.cocom_service.data.AlbumComDetails;
 import com.greenart.cocom_service.data.ArtistInfoVO;
 import com.greenart.cocom_service.data.MemberInfoVO;
 
@@ -22,4 +23,8 @@ public interface MemberMapper {
     public MemberInfoVO selectMemberInfoBySeq(Integer user_no);
     public void updateMemberInfos(MemberInfoVO data);
     public void deleteProfileImg(Integer seq);
+
+    public List<AlbumComDetails> selectCommentsByMemberSeq(Integer seq, Integer offset);
+    public Integer selectCommentsPageCountByMemberSeq(Integer seq);
+    public Integer selectCommentsCountByMemberSeq(Integer seq);
 }

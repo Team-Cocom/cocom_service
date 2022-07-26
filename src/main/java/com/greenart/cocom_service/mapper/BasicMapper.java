@@ -7,7 +7,6 @@ import org.apache.ibatis.annotations.Mapper;
 
 import com.greenart.cocom_service.data.AlbumDetailVO;
 import com.greenart.cocom_service.data.MusicDetailVO;
-import com.greenart.cocom_service.data.MusicInfoVO;
 
 @Mapper
 public interface BasicMapper {

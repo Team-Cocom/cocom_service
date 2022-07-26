@@ -1,0 +1,6 @@
+.comment_wrap {display: inline-block; text-align: center; margin-left: 200px; }
+.comment_list {display: inline-block; border:  1px solid #767676;  width: 100%;}
+.album_info{font-weight: 700; padding: 10px; margin: 0px auto;}
+
+.profile_img_area {display: inline-block; margin-left: 200px;}
+.buttons {border-bottom: 1px solid #767676;}

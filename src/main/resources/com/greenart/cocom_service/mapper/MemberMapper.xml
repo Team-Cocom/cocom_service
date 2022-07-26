@@ -50,4 +50,35 @@
         set mi_profile_img = '' where mi_seq = #{seq}
     </update>
     
+    <select id="selectCommentsByMemberSeq" resultType="com.greenart.cocom_service.data.AlbumComDetails">
+        select * from album_comment_details
+        where acom_mi_seq = #{seq}
+        limit 10 offset #{offset}
+    </select> 
+    <select id="selectCommentsPageCountByMemberSeq" resultType="java.lang.Integer">
+        select ceil(count(*)/10) from album_comment_details where acom_mi_seq = #{seq}
+    </select> 
+    <select id="selectCommentsCountByMemberSeq" resultType="java.lang.Integer">
+        select count(*) from album_comment_details where acom_mi_seq = #{seq}
+    </select> 
+
 </mapper>
+
+
+
+
+<!-- 
+
+    <select id="selectCommentsByAccountSeq" resultType="com.greenart.movie_service.data.CommentDetailInfoVO">
+        select * from  comment_detail_info_view
+        where mc_ai_seq = #{seq}
+        limit 10 offset #{offset}
+    </select> 
+    <select id="selectCommentsPageCountByAccountSeq" resultType="java.lang.Integer">
+        select ceil(count(*)/10) from comment_detail_info_view where mc_ai_seq = #{seq}
+    </select> 
+    <select id="selectCommentsCountByAccountSeq" resultType="java.lang.Integer">
+        select count(*) from comment_detail_info_view where mc_ai_seq = #{seq}
+    </select> 
+
+ -->
