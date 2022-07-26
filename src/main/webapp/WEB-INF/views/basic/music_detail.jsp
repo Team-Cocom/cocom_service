@@ -33,6 +33,7 @@
                                 <fmt:formatDate value="${list.mu_reg_dt}" pattern="yyyy.MM.dd" /></span>
                         </div>
                         <div class="music_list_add">
+                            <button data-seq="${list.mu_seq}" user-seq="${user.mi_seq}" class="mu_like"><i class="fas fa-thumbs-up">${Like}</i></button>
                             <button data-seq="${list.mu_seq}" class="mu_info"></button>
                             <button class="add_list_btn"> 내리스트 추가 </button>
                         </div>

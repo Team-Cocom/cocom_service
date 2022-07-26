@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.greenart.cocom_service.mapper.LikeMapper">
+    <insert id="insertMusicLike">
+        INSERT INTO like_info
+        (li_mi_seq,li_mu_seq)
+        VALUES
+        (#{mi_seq},#{mu_seq})
+    </insert>
+    <select id="selectMusicLikeCount" resultType="java.lang.Integer">
+        select count(*) from like_info
+        where li_mu_seq = #{mu_seq}
+    </select>
+    <select id="selectLikeMember" resultType="java.lang.Integer">
+        select count(*) from like_info 
+        where li_mi_seq = #{mi_seq} and li_mu_seq = #{mu_seq}
+    </select>
+    <insert id="insertAlbumLike">
+        INSERT INTO like_info
+        (li_mi_seq,li_ab_seq)
+        VALUES
+        (#{mi_seq},#{ab_seq})
+    </insert>
+    <select id="selectAlbumLikeCount" resultType="java.lang.Integer">
+        select count(*) from like_info
+        where li_ab_seq = #{mu_seq}
+    </select>
+    <select id="selectLikeMemberAlbum" resultType="java.lang.Integer">
+        select count(*) from like_info 
+        where li_mi_seq = #{mi_seq} and li_ab_seq = #{ab_seq}
+    </select>
+</mapper>

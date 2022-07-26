@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.greenart.cocom_service.data.adminMusicIndex;
 import com.greenart.cocom_service.data.adminRecommendIndex;
@@ -58,5 +59,16 @@ public class MainController {
         return "redirect:/";
     }
 
+    @GetMapping("/search")
+    public String getSearch(@RequestParam String keyword,Model model){
+        if(keyword == null || keyword == ""){
+            return "redirect:/";
+        }
+        model.addAttribute("keyword", keyword);
+        model.addAttribute("musicList", main_mapper.selectMusicSearchInfo(keyword));
+        model.addAttribute("artistList", main_mapper.selectArtistSearchInfo(keyword));
+        model.addAttribute("lyricsList", main_mapper.selectMusicLyricsSearchInfo(keyword));
+        return "/search";
+    }
 
 }

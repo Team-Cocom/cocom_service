@@ -11,4 +11,5 @@ import com.greenart.cocom_service.data.PlayListToMemberVO;
 public interface PlayListMapper {
     public void insertPlayListInfo(PlayListInfoVO data);
     public List<PlayListToMemberVO> selectPlayListToMember(Integer seq);
+    public void deleteMusicFromList(Integer mi_seq, Integer mu_seq);
 }

@@ -46,10 +46,10 @@
                 <a href="/">
                     <img src="/assets/images/cocom_logo.png">
                 </a>
-                <a href="#">내보관함</a>
+                <a href="/myPlayList">내보관함</a>
                 <a href="/pass">이용권</a>
                 <div class="search_box">
-                    <form action="#" method="get">
+                    <form action="/search" method="get">
                         <input type="text" name="keyword" value="${keyword}" placeholder="     검색어를 입력하세요.">
                         <button type="submit">검색</button>
                     </form>
@@ -72,7 +72,7 @@
                 </c:if>
             </div>
         </div>
-        <div class="music_play_area" hidden>
+        <div class="music_play_area">
             <div class="music_play_list">
                 <p class="play_music_img"></p>
                 <span class="play_music_name"></span>
@@ -100,7 +100,7 @@
                         <p class="artist">${item.ai_name}</p>
                         </div>
                         <div class="music_button_area">
-                        <button>삭제</button>
+                        <button data-seq="${item.mu_seq}" class="delete_music_playList">삭제</button>
                         </div>
                     </div>
                 </c:forEach>
