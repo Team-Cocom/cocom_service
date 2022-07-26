@@ -36,7 +36,7 @@ public class PassAPIController {
         passBuy.setPs_period(originPass.getPs_period());
         passBuy.setPs_mi_seq(member.getMi_seq());
 
-        pass_mapper.inertPassToMember(passBuy);
+        pass_mapper.insertPassToMember(passBuy);
         // 
         pass_mapper.updateMemberPass(member.getMi_seq(), passBuy.getPs_seq());
         resultMap.put("status", true);

@@ -46,10 +46,10 @@
                 <a href="/">
                     <img src="/assets/images/cocom_logo.png">
                 </a>
-                <a href="#">내보관함</a>
+                <a href="/mymusic/list?keyword=">내보관함</a>
                 <a href="/pass">이용권</a>
                 <div class="search_box">
-                    <form action="#" method="get">
+                    <form action="/music/list" method="get">
                         <input type="text" name="keyword" value="${keyword}" placeholder="     검색어를 입력하세요.">
                         <button type="submit">검색</button>
                     </form>

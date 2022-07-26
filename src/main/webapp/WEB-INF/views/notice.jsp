@@ -25,7 +25,6 @@
                         <td>번호</td>
                         <td>공지타이틀</td>
                         <td>등록일</td>
-                        <td></td>
                     </tr>
                 </thead>
                 <tbody>

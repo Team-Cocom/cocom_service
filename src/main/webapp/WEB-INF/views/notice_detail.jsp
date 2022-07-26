@@ -19,7 +19,8 @@
                 <thead>
                     <tr >
                         <td>제목</td>
-                        <td>내용</td>
+                        <td>공지 이미지</td>
+                        <td>공지 내용</td>>
                         <td>작성일</td>
                         <td>수정일</td>
                         <td></td>
@@ -32,9 +33,9 @@
                             <c:if test="${noticeList.ni_img_file != ''}">
                                 <img src="/images/notice_img/${noticeList.ni_img_file}" class="ni_detail_info"
                                 data-seq="${noticeList.ni_seq}" data-name="{${noticeList.ni_img_file}}">
-                                <span>${noticeList.ni_ex_text}</span>
                             </c:if>
                         </td>
+                        <td><span>${noticeList.ni_ex_text}</span></td>
                         <td>
                             <fmt:formatDate value="${noticeList.ni_reg_dt}" pattern="yyyy-MM-dd" />
                         </td>
