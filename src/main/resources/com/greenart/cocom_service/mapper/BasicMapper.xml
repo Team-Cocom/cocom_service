@@ -15,4 +15,14 @@ on b.ab_rci_seq = c.rci_seq inner join enter_info d
 on b.ab_ent_seq = d.ent_seq 
 where ab_seq = #{seq}
 </select>
+<select id="selectGenreDetail" resultType="com.greenart.cocom_service.data.GenrePlaylistVO">
+select * from music_info a inner join genre_info b 
+on a.mu_gr_seq = b.gr_seq 
+where gr_seq = #{seq}
+</select>
+<select id="selectMusicList" resultType="com.greenart.cocom_service.data.MusicInfoVO">
+select a.mu_seq ,a.mu_name ,a.mu_img_file,a.mu_lyrics ,b.ab_seq ,b.ab_name,b.ab_img_file  from music_info a left outer join album_info b 
+on a.mu_ab_seq = b.ab_seq  where mu_name like '%keyword%' or b.ab_name like '%keyword%' or a.mu_lyrics  like '%keyword%'
+</select>
+
 </mapper>

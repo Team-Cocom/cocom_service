@@ -13,7 +13,7 @@
     <select id="selectMemberInfoBySeq" resultType="com.greenart.cocom_service.data.MemberInfoVO">
         select * from member_info where mi_seq = #{seq}
     </select>
-    <insert id="inertPassToMember" parameterType="com.greenart.cocom_service.data.PassInfoVO" useGeneratedKeys="true" keyProperty="ps_seq">
+    <insert id="insertPassToMember" parameterType="com.greenart.cocom_service.data.PassInfoVO" useGeneratedKeys="true" keyProperty="ps_seq">
         INSERT INTO pass_info
         (ps_type, ps_mi_buy_dt, ps_name, ps_price, ps_mi_seq, ps_period, ps_mi_end_dt)
         VALUES

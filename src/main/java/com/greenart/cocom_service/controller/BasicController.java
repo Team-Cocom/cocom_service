@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 import com.greenart.cocom_service.mapper.BasicMapper;
 import com.greenart.cocom_service.mapper.LikeMapper;
 import com.greenart.cocom_service.service.MusicService;
@@ -35,6 +36,17 @@ public class BasicController {
     }
     @GetMapping("/mymusic/list")
     public String myMusicList(Model model) {
-        return "basic/mymusic";
+        return "/basic/mymusic";
+    }
+    @GetMapping("/genre/detail")
+    public String genreDetail(Model model, @RequestParam @Nullable Integer genre_no) {
+        model.addAttribute("list", basic_mapper.selectGenreDetail(genre_no));
+        return "/basic/genre_detail";
+    }
+    @GetMapping("/music/list")
+    public String musicList(Model model, @RequestParam @Nullable String keyword) {
+        
+        model.addAttribute("keyword", basic_mapper.selectMusicList(keyword));
+        return "/basic/music_list";
     }
 }
