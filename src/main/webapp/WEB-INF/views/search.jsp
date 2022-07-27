@@ -7,10 +7,10 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="/assets/css/search.css">
+    <script src="/assets/js/music_detail.js"></script>
 </head>
 <body>
     <main>
-        <h1>'${keyword}' 검색결과</h1>
         <section class="music_summary_list_section">
             <h1>'${keyword}' 검색 음악</h1>
             <c:forEach items="${musicList}" var="item">
@@ -51,6 +51,7 @@
                         <td>곡/가사</td>
                         <td></td>
                         <td>아티스트</td>
+                        <td></td>
                     </tr>
                 </thead>
                 <tbody>
@@ -64,6 +65,9 @@
                         </td>
                         <td>
                             ${item.ai_name}
+                        </td>
+                        <td>
+                            <button data-seq="${item.mu_seq}" class="mu_info">play</button>
                         </td>
                     </tr>
                     </c:forEach>

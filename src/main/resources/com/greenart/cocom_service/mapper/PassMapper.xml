@@ -17,7 +17,7 @@
         INSERT INTO pass_info
         (ps_type, ps_mi_buy_dt, ps_name, ps_price, ps_mi_seq, ps_period, ps_mi_end_dt)
         VALUES
-        (#{ps_type}, now(), #{ps_name}, #{ps_price}, #{ps_mi_seq}, #{ps_period}, DATE_ADD(NOW(), INTERVAL 1 MINUTE));
+        (#{ps_type}, now(), #{ps_name}, #{ps_price}, #{ps_mi_seq}, #{ps_period}, DATE_ADD(NOW(), INTERVAL 5 MINUTE));
     </insert>
     <update id="updateMemberPass">
         UPDATE member_info

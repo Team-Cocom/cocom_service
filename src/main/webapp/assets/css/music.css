@@ -1,5 +1,5 @@
 main{
-    min-width: 1280;
+    min-width: 1280; padding-bottom: 150px;
 }
 
 .music_detail_wrap {

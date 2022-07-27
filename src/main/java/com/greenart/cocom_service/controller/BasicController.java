@@ -30,6 +30,7 @@ public class BasicController {
     public String albumDetail(Model model, @RequestParam @Nullable Integer album_no
     ,@RequestParam @Nullable Integer user_no, HttpSession session
     ) {
+        model.addAttribute("data", music_service.getMusicInfoAll(album_no, session));
         model.addAttribute("list", basic_mapper.selectAlbumDetail(album_no));
         model.addAttribute("Like", like_mapper.selectAlbumLikeCount(album_no));
         return "/basic/album_detail";

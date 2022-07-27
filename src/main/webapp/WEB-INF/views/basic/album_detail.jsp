@@ -115,7 +115,7 @@
                     <div class="score_btn">
                         <img src="/assets/images/star_bg.png">
                         <c:forEach begin="1" end="10" varStatus="stat">
-                            <span class="score_box_click" style="left:${(stat.count-1)*12}px"></span>
+                            <span class="score_box_click" style="left:${(stat.index-1)*12}px"></span>
                         </c:forEach>
                         <c:forEach begin="1" end="10">
                             <span class="score_box" style="background-color: skyblue;"></span>

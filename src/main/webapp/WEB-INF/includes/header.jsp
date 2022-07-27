@@ -71,12 +71,12 @@
                 </c:if>
             </div>
         </div>
-        <div class="music_play_area" hidden>
+        <div class="music_play_area">
             <div class="music_play_list">
                 <p class="play_music_img"></p>
                 <span class="play_music_name"></span>
                 <p class="play_music_artist"></p>
-                <audio id="play_music" controls src="/sample.mp3"></audio>
+                <audio id="play_music" controls src="/sample.mp3" ></audio>
                 <button class="music_inventory_button">
                     <i class="fas fa-bars">
                     </i>

@@ -1,5 +1,5 @@
 main{
-    min-width: 1280px;
+    min-width: 1280px; padding-bottom: 150px;
 }
 .join_area {position: relative;text-align: center;  width: 900px;  max-height: 800px; border: 1px solid #eee;
     box-shadow: 0 0 10px rgba(0,0,0,0.15); border-radius: 5px;  margin:auto; margin-top: 70px;

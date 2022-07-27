@@ -1,4 +1,6 @@
-
+main{
+    min-width: 1280px; padding-bottom: 150px;
+}
 .mypage_wrap{width: 1280px; position: relative; margin: 0 auto; }
 .mypage_item {display: inline-block; text-align: left; margin-left: 0; top: 0;
     background-color: #43c2d8; color: #fff;

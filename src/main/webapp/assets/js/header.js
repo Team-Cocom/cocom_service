@@ -7,6 +7,7 @@ $(function(){
     })
 
 
+    
     $(".music_inventory_button").click(function(){
         if(swit) {
             $(".music_inventory_area").removeClass("on"); 
@@ -32,8 +33,9 @@ $(function(){
     })
 
 
-        $(".music_inventory").click(function(){
+        $(".music_item").click(function(){
             now_playing = $(this).index();
+            sessionStorage.setItem("music_index",now_playing);
             let img = $(this).find(".img").val();
             let music = $(this).find(".music").val();
             let music_name = $(this).find(".music_name_input").val();
@@ -43,6 +45,7 @@ $(function(){
             $(".play_music_img").css("background-image", "url('"+img+"')");
             $("#play_music").attr("src", music);
             document.getElementById('play_music').play();
+            document.getElementById('play_music').currentTime = sessionStorage.getItem("time");
         })
         
         document.getElementById('play_music').ontimeupdate = function(){
@@ -53,10 +56,22 @@ $(function(){
                 else {
                     now_playing++;
                 }
-                $(".music_inventory").eq(now_playing).trigger('click');
+                $(".music_item").eq(now_playing).trigger('click');
                 this.play();
             }
         }
+        
+        window.onbeforeunload = function () {
+            let time = document.getElementById('play_music').currentTime;
+            sessionStorage.setItem("time",time);
+        }
+        
+        
+            window.onload = function () {
+                let index = sessionStorage.getItem("music_index");
+                $(".music_item").eq(index).trigger('click');
+
+            }
+    })
     
-})
 
